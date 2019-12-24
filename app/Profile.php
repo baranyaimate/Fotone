@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
@@ -16,5 +17,10 @@ class Profile extends Model
     public function profileImage()
     {
         return ($this->image) ? '/storage/' . $this->image : 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class);
     }
 }
