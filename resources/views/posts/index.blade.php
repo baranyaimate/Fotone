@@ -4,11 +4,11 @@
 <div class="container">
 
     @foreach($posts as $post)
-        <div class="col-md-6 mx-auto mb-4 p-0 border bg-white">
+        <div class="col-md-6 mx-auto mb-4 p-0 border bg-white rounded">
             <div class="py-3 px-2">
                 <img src="{{ $post->user->profile->profileImage() }}" class="rounded-circle pr-1" alt="" style="max-width: 35px">
                 <span class="font-weight-bold">
-                    <a class="text-dark" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                    <a class="no-a-styling" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
                 </span>
             </div>
             <div class="">

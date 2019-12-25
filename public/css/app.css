@@ -11356,3 +11356,12 @@ a.text-dark:focus {
   }
 }
 
+.no-a-styling {
+  color: black;
+}
+
+.no-a-styling:hover {
+  text-decoration: none;
+  color: black;
+}
+

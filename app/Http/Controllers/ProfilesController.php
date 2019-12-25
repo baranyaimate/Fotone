@@ -79,10 +79,15 @@ class ProfilesController extends Controller
         return view('profiles.followers', compact('followers', 'user'));
     }
 
-    public function showUsersList()
+    public function showUsersList(User $user)
     {
         $users = User::all();
+        $follows = array();
 
-        return view('profiles.usersList', compact('users'));
+        foreach ($users as $user) {
+            $follows[] = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+        }
+
+        return view('profiles.usersList', compact('users', 'follows'));
     }
 }
