@@ -2,43 +2,69 @@
 
 @section('content')
 <div class="container">
+
+    @can('update', $user->profile)
+        <div class="d-flex justify-content-center">
+            <a href="/profile/{{ $user->id }}/edit" class="px-4 font-weight-bold btn btn-outline-primary w-100" style="max-width: 750px">Edit Profile</a>
+        </div>
+    @endcan
+
     <div class="row">
         <div class="col-3 p-4">
-            <img src="{{ $user->profile->profileImage() }}" class="rounded-circle w-100" alt="">
+            <img src="{{ $user->profile->profileImage() }}" class="rounded-circle w-100 pr-2" alt="" style="min-width: 70px">
         </div>
         <div class="col-9 pt-4">
+
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex align-items-center pb-2">
                     <div class="h3 mb-0">{{ $user->username }}</div>
                     <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                 </div>
+            </div>
 
-                @can('update', $user->profile)
-                    <a href="/p/create" class="font-weight-bold">Add New Post</a>
-                @endcan
-            </div>
-            @can('update', $user->profile)
-                <a href="/profile/{{ $user->id }}/edit" class="font-weight-bold">Edit Profile</a>
-            @endcan
             <div class="d-flex">
-                <div class="pr-4"><strong>{{ $postCount }}</strong> posts</div>
-                <div class="pr-4"><strong>{{ $followersCount }}</strong> followers</div>
-                <div class="pr-4"><strong>{{ $followingCount }}</strong> following</div>
+                <div class="pr-4 text-center"><strong>{{ $postCount }}</strong> posts</div>
+
+                <div class="pr-4 text-center">
+                    <a href="/profile/{{ $user->id }}/followers" style="color: black; text-decoration: none">
+                        <strong>{{ $followersCount }}</strong> followers
+                    </a>
+                </div>
+
+                <div class="pr-4 text-center">
+                    <a href="/profile/{{ $user->id }}/following" style="color: black; text-decoration: none">
+                        <strong>{{ $followingCount }}</strong> following
+                    </a>
+                </div>
             </div>
+
+        </div>
+
+        <div class="col-9">
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
-            <div>{{ $user->profile->description }}</div>
+            <p class="text-justify">{{ $user->profile->description }}</p>
             <div><a class="font-weight-bold" href="{{ $user->profile->url }}">{{ $user->profile->url }}</a></div>
         </div>
+
     </div>
 
+    <hr>
+
     <div class="row pt-5">
-        @foreach($user->posts as $post)
-        <div class="col-4 pb-4">
-            <a href="/p/{{ $post->id }}">
-                <img src="/storage/{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
-            </a>
-        </div>
-        @endforeach
+
+        @if (!$user->posts->isEmpty())
+            @foreach($user->posts as $post)
+            <div class="col-md-4 px-3 mb-4">
+                <a href="/p/{{ $post->id }}">
+                    <img src="/storage/{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+                </a>
+                <p class="d-flex d-md-none py-2 text-justify">{{ $post->caption }}</p>
+            </div>
+            @endforeach
+        @else
+            <h3 class="text-center w-100">No Posts Yet</h3>
+        @endif
+
     </div>
 </div>
 @endsection

@@ -18,6 +18,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('svg/logo.svg') }}">
+    <link rel="apple-touch-startup-image" href="{{ asset('svg/logo.svg') }}"/>
+    <link rel="icon" type="image/svg" sizes="32x32" href="{{ asset('svg/logo.svg') }}">
+    <link rel="icon" type="image/svg" sizes="16x16" href="{{ asset('svg/logo.svg') }}">
+    <link rel="shortcut icon" href="{{ asset('svg/logo.svg') }}">
+    
 </head>
 <body>
     <div id="app">
@@ -31,9 +39,8 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
+                    <ul class="navbar-nav m-auto">
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -55,6 +62,19 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">
+                                        Profile
+                                    </a>
+
+                                    <a class="dropdown-item" href="/p/create">
+                                        Add New Post
+                                    </a>
+
+                                    <a class="dropdown-item" href="/users">
+                                        Users
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

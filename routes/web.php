@@ -12,6 +12,7 @@
 */
 
 use App\Mail\NewUserWelcomeMail;
+use Illuminate\Support\Facades\Input;
 
 Auth::routes();
 
@@ -29,3 +30,7 @@ Route::get('/p/{post}', 'PostsController@show');
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
+Route::get('/profile/{user}/following', 'ProfilesController@showFollowing')->name('profile.showFollowing');
+Route::get('/profile/{user}/followers', 'ProfilesController@showFollowers')->name('profile.showFollowers');
+
+Route::get('/users', 'ProfilesController@showUsersList')->name('profile.showUsersList');

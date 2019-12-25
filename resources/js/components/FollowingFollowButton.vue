@@ -1,5 +1,5 @@
 <template>
-    <button class="btn btn-primary ml-4 py-1" @click="followUser" v-text="buttonText"></button>
+    <button class="btn btn-primary ml-auto" @click="followUser" v-text="buttonText"></button>
 </template>
 
 <script>

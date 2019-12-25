@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Intervention\Image\Facades\Image;
@@ -13,15 +14,15 @@ class ProfilesController extends Controller
     {
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
 
-        $postCount = Cache::remember('count.posts.' . $user->id, now()->addSeconds(30), function() use ($user) {
+        $postCount = Cache::remember('count.posts.' . $user->id, now()->addSeconds(10), function() use ($user) {
             return $user->posts->count();
         });
 
-        $followersCount = Cache::remember('count.followers.' . $user->id, now()->addSeconds(30), function() use ($user) {
+        $followersCount = Cache::remember('count.followers.' . $user->id, now()->addSeconds(10), function() use ($user) {
             return $user->profile->followers->count();
         });
 
-        $followingCount = Cache::remember('count.following.' . $user->id, now()->addSeconds(30), function() use ($user) {
+        $followingCount = Cache::remember('count.following.' . $user->id, now()->addSeconds(10), function() use ($user) {
             return $user->following->count();
         });
 
@@ -40,10 +41,10 @@ class ProfilesController extends Controller
         $this->authorize('update', $user->profile);
 
         $data = request()->validate([
-            'title' => 'required',
-            'description' => '',
-            'url' => 'url',
-            'image' => '',
+            'title' => 'max:255',
+            'description' => 'max:255',
+            'url' => 'nullable|url',
+            'image' => 'max:20480',
         ]);
 
         if(request('image'))
@@ -62,5 +63,26 @@ class ProfilesController extends Controller
         ));
 
         return redirect("/profile/{$user->id}");
+    }
+
+    public function showFollowing(User $user)
+    {
+        $following = User::findOrFail($user->following()->pluck('profiles.user_id'));
+
+        return view('profiles.following', compact('following', 'user'));
+    }
+
+    public function showFollowers(User $user)
+    {
+        $followers = $user->profile->followers;
+
+        return view('profiles.followers', compact('followers', 'user'));
+    }
+
+    public function showUsersList()
+    {
+        $users = User::all();
+
+        return view('profiles.usersList', compact('users'));
     }
 }

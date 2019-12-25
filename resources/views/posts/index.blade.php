@@ -4,23 +4,22 @@
 <div class="container">
 
     @foreach($posts as $post)
-        <div class="row">
-            <div class="col-6 offset-3">
+        <div class="col-md-6 mx-auto mb-4 p-0 border bg-white">
+            <div class="py-3 px-2">
+                <img src="{{ $post->user->profile->profileImage() }}" class="rounded-circle pr-1" alt="" style="max-width: 35px">
+                <span class="font-weight-bold">
+                    <a class="text-dark" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                </span>
+            </div>
+            <div class="">
                 <a href="/p/{{ $post->id }}">
                     <img src="/storage/{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
                 </a>
             </div>
-        </div>
-        <div class="row pt-2 pb-4">
-            <div class="col-6 offset-3">
-                <div>
-                    <p>
-                        <span class="font-weight-bold">
-                            <a class="text-dark" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
-                        </span>
-                        {{ $post->caption }}
-                    </p>
-                </div>
+            <div class="py-2 px-2">
+                <p class="text-justify m-0">
+                    {{ $post->caption }}
+                </p>
             </div>
         </div>
     @endforeach
