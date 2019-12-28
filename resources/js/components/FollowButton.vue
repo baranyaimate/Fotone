@@ -36,7 +36,7 @@ import { METHODS, request } from 'http'
         computed: {
             buttonText() {
                 return (this.status) ? 'Unfollow' : 'Follow';
-            }
+            },
         }
     }
 </script>

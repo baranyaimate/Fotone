@@ -4,10 +4,10 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-3 p-4">
-            <img src="{{ $user->profile->profileImage() }}" class="rounded-circle w-100 pr-2" alt="{{ $user->username }} profile picture" style="min-width: 70px">
+        <div class="col-sm-3 p-4">
+            <img src="{{ $user->profile->profileImage() }}" id="profile-picture" class="rounded-circle w-100 pr-2" alt="{{ $user->username }} profile picture" style="min-width: 70px">
         </div>
-        <div class="col-9 pt-4">
+        <div class="col-sm-9 pt-4">
 
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex align-items-center pb-2">
@@ -44,12 +44,10 @@
 
             </div>
 
-        </div>
-
-        <div class="col-9">
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <p class="text-justify mb-0">{{ $user->profile->description }}</p>
             <a class="font-weight-bold" href="{{ $user->profile->url }}">{{ $user->profile->url }}</a>
+
         </div>
 
     </div>

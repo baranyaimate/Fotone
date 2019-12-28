@@ -68,15 +68,25 @@ class ProfilesController extends Controller
     public function showFollowing(User $user)
     {
         $following = User::findOrFail($user->following()->pluck('profiles.user_id'));
+        $follows = array();
 
-        return view('profiles.following', compact('following', 'user'));
+        foreach ($following as $user) {
+            $follows[] = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+        }
+
+        return view('profiles.following', compact('following', 'user', 'follows'));
     }
 
     public function showFollowers(User $user)
     {
         $followers = $user->profile->followers;
+        $follows = array();
 
-        return view('profiles.followers', compact('followers', 'user'));
+        foreach ($followers as $user) {
+            $follows[] = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+        }
+
+        return view('profiles.followers', compact('followers', 'user', 'follows'));
     }
 
     public function showUsersList(User $user)
