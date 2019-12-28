@@ -1,5 +1,5 @@
 @component('mail::message')
-# Welcome to Timetable
+# Welcome to {{ config('app.name') }}
 
 This is a free cross platform planner app for students and teachers.
 
