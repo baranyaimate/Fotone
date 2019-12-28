@@ -7,6 +7,7 @@ use App\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Intervention\Image\Facades\Image;
+use JD\Cloudder\Facades\Cloudder;
 
 class ProfilesController extends Controller
 {
@@ -36,7 +37,7 @@ class ProfilesController extends Controller
         return view('profiles.edit', compact('user'));
     }
 
-    public function update(User $user)
+    public function update(User $user, Request $request)
     {
         $this->authorize('update', $user->profile);
 
@@ -50,11 +51,13 @@ class ProfilesController extends Controller
         if(request('image'))
         {
             $imagePath = request('image')->store('profile', 'public');
+            $image_name = $request->file('image')->getRealPath();
 
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
-            $image->save();
+            Cloudder::upload($image_name, null);
 
-            $imageArray = ['image' => $imagePath];
+            $url = Cloudder::getResult()['secure_url'];
+
+            $imageArray = ['image' => $url];
         }
 
         auth()->user()->profile->update(array_merge(
