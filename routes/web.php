@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Input;
 
 Auth::routes();
 
-URL::forceScheme('https');
-
 Route::get('/email', function() {
   return new NewUserWelcomeMail();
 });
