@@ -26,6 +26,8 @@
     <link rel="icon" type="image/ico" sizes="16x16" href="{{ asset('favicon.ico') }}">
     <link rel="shortcut icon" href="{{ asset('svg/logo.svg') }}">
     
+    <base href="/" />
+    
 </head>
 <body>
     <div id="app">

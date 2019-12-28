@@ -1,5 +1,5 @@
 <template>
-    <button class="btn btn-primary ml-auto" @click="followUser" v-text="buttonText"></button>
+    <button class="btn ml-auto" @click="followUser" v-text="buttonText" v-bind:class="{btnPrimary: !status, btnOutlinePrimary: status}"></button>
 </template>
 
 <script>
