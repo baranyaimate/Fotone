@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Input;
 Auth::routes();
 
 if (env('APP_ENV') === 'production') {
-  URL::forceSchema('https');
+  URL::forceScheme('https');
 }
 
 Route::get('/email', function() {
