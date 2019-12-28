@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Input;
 
 Auth::routes();
 
+if (env('APP_ENV') === 'production') {
+  URL::forceSchema('https');
+}
+
 Route::get('/email', function() {
-    return new NewUserWelcomeMail();
+  return new NewUserWelcomeMail();
 });
 
 Route::post('follow/{user}', 'FollowsController@store');
