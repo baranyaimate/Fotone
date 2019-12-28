@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-8">
-            <img src="/storage/{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+            <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
         </div>
         <div class="col-4">
             <div>

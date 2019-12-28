@@ -13,7 +13,7 @@
             </div>
             <div class="">
                 <a href="/p/{{ $post->id }}">
-                    <img src="/storage/{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+                    <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
                 </a>
             </div>
             <div class="py-2 px-2">
