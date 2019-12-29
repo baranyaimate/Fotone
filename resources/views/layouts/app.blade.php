@@ -20,13 +20,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('svg/logo.svg') }}">
-    <link rel="apple-touch-startup-image" href="{{ asset('svg/logo.svg') }}"/>
-    <link rel="icon" type="image/ico" sizes="32x32" href="{{ asset('favicon.ico') }}">
-    <link rel="icon" type="image/ico" sizes="16x16" href="{{ asset('favicon.ico') }}">
-    <link rel="shortcut icon" href="{{ asset('svg/logo.svg') }}">
-
-
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('logo/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('logo/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('logo/favicon-16x16.png') }}">
@@ -36,7 +29,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="{{ asset('logo/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">
-    
     
 </head>
 <body>

@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\User;
+use App\Post;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewUserWelcomeMail;
 
@@ -62,6 +63,11 @@ class User extends Authenticatable
     public function following()
     {
         return $this->belongsToMany(Profile::class);
+    }
+
+    public function like()
+    {
+        return $this->belongsToMany(Post::class);
     }
 
     public function profile()
