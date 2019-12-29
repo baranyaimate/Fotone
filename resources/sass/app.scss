@@ -26,78 +26,101 @@
 }
 
 .btnPrimary {
-    color: #fff;
-    background-color: #3490dc;
-    border-color: #3490dc;
-  }
+  color: #fff;
+  background-color: #3490dc;
+  border-color: #3490dc;
+}
   
-  .btnPrimary:hover {
-    color: #fff;
-    background-color: #227dc7;
-    border-color: #2176bd;
-  }
+.btnPrimary:hover {
+  color: #fff;
+  background-color: #227dc7;
+  border-color: #2176bd;
+}
   
-  .btnPrimary:focus,
-  .btnPrimary.focus {
-    color: #fff;
-    background-color: #227dc7;
-    border-color: #2176bd;
-    box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
-  }
+.btnPrimary:focus,
+.btnPrimary.focus {
+  color: #fff;
+  background-color: #227dc7;
+  border-color: #2176bd;
+  box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
+}
   
-  .btnPrimary.disabled,
-  .btnPrimary:disabled {
-    color: #fff;
-    background-color: #3490dc;
-    border-color: #3490dc;
-  }
+.btnPrimary.disabled,
+.btnPrimary:disabled {
+  color: #fff;
+  background-color: #3490dc;
+  border-color: #3490dc;
+}
   
-  .btnPrimary:not(:disabled):not(.disabled):active,
-  .btnPrimary:not(:disabled):not(.disabled).active,
-  .show > .btnPrimary.dropdown-toggle {
-    color: #fff;
-    background-color: #2176bd;
-    border-color: #1f6fb2;
-  }
+.btnPrimary:not(:disabled):not(.disabled):active,
+.btnPrimary:not(:disabled):not(.disabled).active,
+.show > .btnPrimary.dropdown-toggle {
+  color: #fff;
+  background-color: #2176bd;
+  border-color: #1f6fb2;
+}
   
-  .btnPrimary:not(:disabled):not(.disabled):active:focus,
-  .btnPrimary:not(:disabled):not(.disabled).active:focus,
-  .show > .btnPrimary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
-  }
+.btnPrimary:not(:disabled):not(.disabled):active:focus,
+.btnPrimary:not(:disabled):not(.disabled).active:focus,
+.show > .btnPrimary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
+}
 
-  .btnOutlinePrimary {
-    color: #3490dc;
-    border-color: #3490dc;
-  }
+.btnOutlinePrimary {
+  color: #3490dc;
+  border-color: #3490dc;
+}
+ 
+.btnOutlinePrimary:hover {
+  color: #fff;
+  background-color: #3490dc;
+  border-color: #3490dc;
+}
   
-  .btnOutlinePrimary:hover {
-    color: #fff;
-    background-color: #3490dc;
-    border-color: #3490dc;
-  }
+.btnOutlinePrimary:focus,
+.btnOutlinePrimary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.5);
+}
   
-  .btnOutlinePrimary:focus,
-  .btnOutlinePrimary.focus {
-    box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.5);
-  }
+.btnOutlinePrimary.disabled,
+.btnOutlinePrimary:disabled {
+  color: #3490dc;
+  background-color: transparent;
+}
   
-  .btnOutlinePrimary.disabled,
-  .btnOutlinePrimary:disabled {
-    color: #3490dc;
-    background-color: transparent;
-  }
+.btnOutlinePrimary:not(:disabled):not(.disabled):active,
+.btnOutlinePrimary:not(:disabled):not(.disabled).active,
+.show > .btnOutlinePrimary.dropdown-toggle {
+  color: #fff;
+  background-color: #3490dc;
+  border-color: #3490dc;
+}
   
-  .btnOutlinePrimary:not(:disabled):not(.disabled):active,
-  .btnOutlinePrimary:not(:disabled):not(.disabled).active,
-  .show > .btnOutlinePrimary.dropdown-toggle {
-    color: #fff;
-    background-color: #3490dc;
-    border-color: #3490dc;
-  }
-  
-  .btnOutlinePrimary:not(:disabled):not(.disabled):active:focus,
-  .btnOutlinePrimary:not(:disabled):not(.disabled).active:focus,
-  .show > .btnOutlinePrimary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.5);
-  }
+.btnOutlinePrimary:not(:disabled):not(.disabled):active:focus,
+.btnOutlinePrimary:not(:disabled):not(.disabled).active:focus,
+.show > .btnOutlinePrimary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.5);
+}
+
+.js-cookie-consent.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  background-color: #f0f2f1;
+  z-index: 9999;
+}
+span.cookie-consent__message {
+  color: #1F1F21;
+}
+button.js-cookie-consent-agree {
+  border: none;
+  border-radius: 0.25rem;
+  background: #3490dc;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #fff;
+  @extend .mx-2;
+}
