@@ -7,10 +7,6 @@ import { METHODS, request } from 'http'
     export default {
         props: ['userId', 'follows'],
 
-        mounted() {
-            console.log('Component mounted.')
-        },
-
         data: function () {
             return {
                 status: this.follows,
