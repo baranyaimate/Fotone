@@ -57531,6 +57531,29 @@ Vue.component('following-follow-button', __webpack_require__(/*! ./components/Fo
 var app = new Vue({
   el: '#app'
 });
+var image = document.getElementById("image");
+var previewContainer = document.getElementById("imagePreview");
+var previewImage = previewContainer.querySelector(".image-preview-image");
+image.addEventListener("change", function () {
+  var file = this.files[0];
+
+  if (file) {
+    var reader = new FileReader();
+    previewContainer.style.display = "block";
+    previewImage.style.display = "block";
+    reader.addEventListener("load", function () {
+      previewImage.setAttribute("src", this.result);
+    });
+    reader.readAsDataURL(file);
+  } else {
+    previewImage.style.display = null;
+    previewContainer.style.display = null;
+  }
+});
+$(".custom-file-input").on("change", function () {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
 
 /***/ }),
 

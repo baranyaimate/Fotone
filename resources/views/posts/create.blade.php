@@ -1,44 +1,49 @@
 @extends('layouts.app')
 
+@push('scripts')
+    <script src="/js/ImagePreview.js"></script>
+@endpush
+
 @section('content')
 <div class="container">
     <form action="/p" enctype="multipart/form-data" method="post">
         @csrf
 
-        <div class="row">
-            <div class="col-8 offset-2">
+        <div class="pt-4">
+            <h1>New Post</h1>
+        </div>
 
-                <div class="row pt-4">
-                    <h1>Add New Post</h1>
-                </div>
+        <div class="form-group">
+            <label for="image" class="col-form-label">Image</label>
 
-                <div class="form-group row">
-                    <label for="caption" class="col-md-4 col-form-label">Post caption</label>
-
-                    <input id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption" value="{{ old('caption') }}" required autocomplete="caption" autofocus>
-
-                    @error('caption')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group row">
-                    <label for="image" class="col-md-4 col-form-label">Image</label>
-
-                    <input type="file" class="form-control-file" name="image">
-
-                    @error('image')
-                        <strong>{{ $message }}</strong>
-                    @enderror
-                </div>
-
-                <div class="row pt-4">
-                    <button class="btn btn-primary">Add New Post</button>
-                </div>
-
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="image" id="image">
+                <label class="custom-file-label" for="image">Choose file</label>
             </div>
+
+            <div class="image-preview rounded" id="imagePreview">
+                <img src="" alt="Image Preview" class="image-preview-image rounded">
+            </div>
+
+            @error('image')
+            <strong>{{ $message }}</strong>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="caption" class="col-form-label">Post caption</label>
+
+            <textarea id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption" value="{{ old('caption') }}" autocomplete="caption"></textarea>
+
+            @error('caption')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+
+        <div class="pt-4">
+            <button class="btn btn-primary">Upload post</button>
         </div>
     </form>
 </div>

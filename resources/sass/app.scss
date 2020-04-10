@@ -124,3 +124,24 @@ button.js-cookie-consent-agree {
   color: #fff;
   @extend .mx-2;
 }
+
+//Image upload
+.image-preview {
+  width: 70%;
+  margin: 1rem auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ccc;
+  display: none;
+}
+.image-preview-image {
+  display: none;
+  width: 100%;
+}
+#caption {
+  min-height: 2.5rem;
+  height: 2.5rem;
+}

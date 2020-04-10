@@ -74,8 +74,8 @@
                                         Profile
                                     </a>
 
-                                    <a class="dropdown-item" href="/p/create">
-                                        Add New Post
+                                    <a class="dropdown-item" href="/upload">
+                                        New Post
                                     </a>
 
                                     <a class="dropdown-item" href="/users">
@@ -86,7 +86,7 @@
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

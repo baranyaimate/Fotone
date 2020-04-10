@@ -11478,3 +11478,27 @@ button.js-cookie-consent-agree {
   color: #fff;
 }
 
+.image-preview {
+  width: 70%;
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  color: #ccc;
+  display: none;
+}
+
+.image-preview-image {
+  display: none;
+  width: 100%;
+}
+
+#caption {
+  min-height: 2.5rem;
+  height: 2.5rem;
+}
+

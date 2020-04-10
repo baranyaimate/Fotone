@@ -31,3 +31,34 @@ Vue.component('following-follow-button', require('./components/FollowingFollowBu
 const app = new Vue({
     el: '#app',
 });
+
+
+const image = document.getElementById("image");
+const previewContainer = document.getElementById("imagePreview");
+const previewImage = previewContainer.querySelector(".image-preview-image");
+
+
+image.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        previewContainer.style.display = "block";
+        previewImage.style.display = "block";
+
+        reader.addEventListener("load", function () {
+            previewImage.setAttribute("src", this.result);
+        });
+
+        reader.readAsDataURL(file);
+    } else {
+        previewImage.style.display = null;
+        previewContainer.style.display = null;
+    }
+});
+
+$(".custom-file-input").on("change", function () {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
