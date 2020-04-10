@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-<div class="container">
+<div class="container" style="max-width: 650px;">
     <form action="/p" enctype="multipart/form-data" method="post">
         @csrf
 
