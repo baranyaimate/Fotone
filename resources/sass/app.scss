@@ -125,6 +125,7 @@ button.js-cookie-consent-agree {
   @extend .mx-2;
 }
 
+
 //Image upload
 .image-preview {
   width: 70%;
@@ -143,4 +144,21 @@ button.js-cookie-consent-agree {
 #caption {
   min-height: 2.5rem;
   height: 2.5rem;
+}
+.custom-file-label {
+  overflow: hidden;
+}
+
+.no-posts {
+  display: flex;
+  flex-direction: column;
+}
+.no-posts h2, h3 {
+  text-align: center;
+}
+.no-posts .btn {
+  margin: auto;
+}
+.no-posts .btn:hover {
+  color: white;
 }

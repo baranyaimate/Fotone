@@ -11502,3 +11502,28 @@ button.js-cookie-consent-agree {
   height: 2.5rem;
 }
 
+.custom-file-label {
+  overflow: hidden;
+}
+
+.no-posts {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.no-posts h2,
+h3 {
+  text-align: center;
+}
+
+.no-posts .btn {
+  margin: auto;
+}
+
+.no-posts .btn:hover {
+  color: white;
+}
+
