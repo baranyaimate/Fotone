@@ -15,10 +15,11 @@
                 <div class="py-3 px-2">
                     <img src="{{ $post->user->profile->profileImage() }}" class="rounded-circle pr-1" alt="{{ $post->user->username }}" style="max-width: 35px">
                     <span class="font-weight-bold">
-                        <a class="no-a-styling" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                        <a class="text-dark" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
                     </span>
+                    
                 </div>
-                <div class="">
+                <div>
                     <a href="/p/{{ $post->id }}">
                         <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
                     </a>

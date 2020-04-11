@@ -71,7 +71,7 @@
             </div>
         @endforeach
     @else
-        <h3 class="text-center w-100">No Posts Yet</h3>
+        <h3 class="text-center w-100">No posts yet</h3>
     @endif
 </div>
 @endsection
