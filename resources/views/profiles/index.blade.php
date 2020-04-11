@@ -23,7 +23,7 @@
             <div class="d-flex">
 
                 <div class="pr-4 text-center"><strong>{{ $postCount }}</strong>
-                    @if($postCount < 2) 
+                    @if($postCount <= 1) 
                         post
                     @else
                         posts
@@ -53,22 +53,25 @@
     </div>
 
     <hr>
-
-    <div class="row pt-5">
-
-        @if (!$user->posts->isEmpty())
-            @foreach($user->posts as $post)
-            <div class="col-md-4 px-3 mb-4">
-                <a href="/p/{{ $post->id }}">
-                    <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
-                </a>
-                <p class="d-flex d-md-none py-2 text-justify">{{ $post->caption }}</p>
+    @if (!$user->posts->isEmpty())
+        @foreach($user->posts->chunk(3) as $chunk)
+            <div class="row">
+                @foreach($chunk as $post)
+                    <div class="col-md-4">
+                        <div class="p-0 my-3 border bg-white rounded shadow">
+                            <a href="/p/{{ $post->id }}">
+                                <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
+                            </a>
+                            <div class="d-md-none py-2 px-2">
+                                <p class="d-flex d-md-none py-2 text-justify m-0">{{ $post->caption }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            @endforeach
-        @else
-            <h3 class="text-center w-100">No Posts Yet</h3>
-        @endif
-
-    </div>
+        @endforeach
+    @else
+        <h3 class="text-center w-100">No Posts Yet</h3>
+    @endif
 </div>
 @endsection
