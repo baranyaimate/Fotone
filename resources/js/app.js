@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('follow-button', require('./components/FollowButton.vue').default);
 Vue.component('following-follow-button', require('./components/FollowingFollowButton.vue').default);
+Vue.component('image-preview', require('./components/ImagePreview.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
