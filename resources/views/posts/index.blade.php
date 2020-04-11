@@ -6,7 +6,7 @@
     @if($posts->isEmpty())
         <div class="no-posts">
             <h2 class="no-posts mb-3">You can't see any posts yet.</h2>
-            <h3 class="no-posts mb-3">Go and follow some people.</h3>
+            <h4 class="no-posts mb-3">Go and follow some people.</h4>
             <a class="btn btn-outline-secondary" href="/users">Users</a>
         </div>
     @else
