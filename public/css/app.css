@@ -11373,6 +11373,42 @@ a.text-dark:focus {
   height: auto;
 }
 
+a {
+  color: #09816c;
+}
+
+a:hover {
+  color: #4fbe9f;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #09816c;
+}
+
+.form-control:focus,
+.custom-file-input:focus ~ .custom-file-label {
+  border-color: #4fbe9f;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(46, 161, 135, 0.5);
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #09816c;
+}
+
+.custom-control-input:valid:focus ~ .custom-control-label::before,
+.custom-control-input.is-valid:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+}
+
+.btn-link {
+  color: #09816c;
+}
+
+.btn-link:hover {
+  color: #4fbe9f;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #09816c;
@@ -11396,7 +11432,7 @@ a.text-dark:focus {
   color: #fff;
   background-color: #4fbe9f;
   border-color: #4fbe9f;
-  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.5);
 }
 
 .btn-primary.disabled,
@@ -11417,7 +11453,7 @@ a.text-dark:focus {
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.5);
 }
 
 .btn-outline-primary {
@@ -11433,7 +11469,7 @@ a.text-dark:focus {
 
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.5);
 }
 
 .btn-outline-primary.disabled,
@@ -11453,7 +11489,7 @@ a.text-dark:focus {
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.5);
 }
 
 .js-cookie-consent.cookie-consent {
@@ -11468,7 +11504,7 @@ a.text-dark:focus {
 }
 
 span.cookie-consent__message {
-  color: #1F1F21;
+  color: #1f1f21;
 }
 
 button.js-cookie-consent-agree {

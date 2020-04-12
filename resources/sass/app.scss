@@ -1,24 +1,60 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 .no-a-styling {
-    color: black;
+  color: black;
 }
+
 .no-a-styling:hover {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 #profile-picture {
-    max-width: 150px!important;
-    min-width: 77px!important;
-    height: auto;
+  max-width: 150px !important;
+  min-width: 77px !important;
+  height: auto;
+}
+
+a {
+  color: $theme-dark-green;
+}
+a:hover {
+  color: $theme-light-green;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: $theme-dark-green;
+}
+
+.form-control:focus,
+.custom-file-input:focus ~ .custom-file-label {
+  border-color: $theme-light-green;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(46, 161, 135, 0.5);
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $theme-dark-green;
+}
+
+.custom-control-input:valid:focus ~ .custom-control-label::before,
+.custom-control-input.is-valid:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+}
+
+.btn-link {
+  color: $theme-dark-green;
+}
+
+.btn-link:hover {
+  color: $theme-light-green;
 }
 
 .btn-primary {
@@ -32,28 +68,28 @@
   background-color: $theme-dark-green;
   border-color: $theme-dark-green;
 }
-  
+
 .btn-primary:hover {
   color: #fff;
   background-color: $theme-light-green;
   border-color: $theme-light-green;
 }
-  
+
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
   background-color: $theme-light-green;
   border-color: $theme-light-green;
-  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.5);
 }
-  
+
 .btn-primary.disabled,
 .btn-primary:disabled {
   color: #fff;
   background-color: $theme-dark-green;
   border-color: $theme-dark-green;
 }
-  
+
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
@@ -61,35 +97,35 @@
   background-color: $theme-dark-green;
   border-color: $theme-dark-green;
 }
-  
+
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.5);
 }
 
 .btn-outline-primary {
   color: $theme-dark-green;
   border-color: $theme-dark-green;
 }
- 
+
 .btn-outline-primary:hover {
   color: #fff;
   background-color: $theme-dark-green;
   border-color: $theme-dark-green;
 }
-  
+
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.5);
 }
-  
+
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
   color: $theme-dark-green;
   background-color: transparent;
 }
-  
+
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
@@ -97,11 +133,11 @@
   background-color: $theme-dark-green;
   border-color: $theme-dark-green;
 }
-  
+
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.5);
 }
 
 .js-cookie-consent.cookie-consent {
@@ -114,9 +150,11 @@
   background-color: #f0f2f1;
   z-index: 9999;
 }
+
 span.cookie-consent__message {
-  color: #1F1F21;
+  color: #1f1f21;
 }
+
 button.js-cookie-consent-agree {
   border: none;
   border-radius: 0.25rem;
@@ -126,7 +164,6 @@ button.js-cookie-consent-agree {
   color: white;
   @extend .mx-2;
 }
-
 
 //Image upload
 .image-preview {
@@ -139,14 +176,17 @@ button.js-cookie-consent-agree {
   color: #ccc;
   display: none;
 }
+
 .image-preview-image {
   display: none;
   width: 100%;
 }
+
 #caption {
   min-height: 2.5rem;
   height: 2.5rem;
 }
+
 .custom-file-label {
   overflow: hidden;
 }
@@ -155,7 +195,8 @@ button.js-cookie-consent-agree {
   display: flex;
   flex-direction: column;
 }
-.no-posts h2, h4 {
+.no-posts h2,
+h4 {
   text-align: center;
 }
 .no-posts .btn {
@@ -166,38 +207,36 @@ button.js-cookie-consent-agree {
 }
 
 //Pagination
-.pagination > li > a
-{
-    background-color: white;
-    color: $theme-dark-green;
+.pagination > li > a {
+  background-color: white;
+  color: $theme-dark-green;
 }
 
 .pagination > li > a:focus,
 .pagination > li > a:hover,
 .pagination > li > span:focus,
-.pagination > li > span:hover
-{
-    color: #5a5a5a;
-    background-color: #eee;
-    border-color: #ddd;
+.pagination > li > span:hover {
+  color: #5a5a5a;
+  background-color: #eee;
+  border-color: #ddd;
 }
 
-.pagination > .active > a
-{
-    color: white;
-    background-color: $theme-dark-green;
-    border: $theme-dark-green;
+.pagination > .active > a {
+  color: white;
+  background-color: $theme-dark-green;
+  border: $theme-dark-green;
 }
 
-.pagination > .active > a:hover
-{
-    background-color: $theme-dark-green;
-    border: $theme-dark-green;
+.pagination > .active > a:hover {
+  background-color: $theme-dark-green;
+  border: $theme-dark-green;
 }
+
 .pagination > .page-item.active .page-link {
   background-color: $theme-dark-green;
-    border: $theme-dark-green;
+  border: $theme-dark-green;
 }
+
 .page-link:focus {
-  box-shadow: 0 0 0 0.2rem  rgba(46, 161, 135, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
 }
