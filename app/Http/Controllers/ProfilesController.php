@@ -94,13 +94,14 @@ class ProfilesController extends Controller
 
     public function showUsersList(User $user)
     {
-        $users = User::all();
+        $usersCount = User::all()->count();
+        $users = User::orderBy('name')->paginate(20);
         $follows = array();
 
         foreach ($users as $user) {
             $follows[] = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
         }
 
-        return view('profiles.usersList', compact('users', 'follows'));
+        return view('profiles.usersList', compact('users', 'follows', 'usersCount'));
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <h2>Users <span class="text-muted">({{ $users->count() }})</span></h2>
+    <h2>Users <span class="text-muted">({{ $usersCount }})</span></h2>
 
     <hr>
 
@@ -19,6 +19,12 @@
             <hr>
         @endif
     @endforeach
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            {{ $users->links() }}
+        </div>
+    </div>
 
 </div>
 @endsection
