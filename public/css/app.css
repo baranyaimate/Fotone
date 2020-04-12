@@ -11373,85 +11373,87 @@ a.text-dark:focus {
   height: auto;
 }
 
-.blue-theme {
-  background: red !important;
-}
-
-.btnPrimary {
+.btn-primary {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #09816c;
+  border-color: #09816c;
 }
 
-.btnPrimary:hover {
+.btn-primary {
   color: #fff;
-  background-color: #227dc7;
-  border-color: #2176bd;
+  background-color: #09816c;
+  border-color: #09816c;
 }
 
-.btnPrimary:focus,
-.btnPrimary.focus {
+.btn-primary:hover {
   color: #fff;
-  background-color: #227dc7;
-  border-color: #2176bd;
-  box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
+  background-color: #4fbe9f;
+  border-color: #4fbe9f;
 }
 
-.btnPrimary.disabled,
-.btnPrimary:disabled {
+.btn-primary:focus,
+.btn-primary.focus {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #4fbe9f;
+  border-color: #4fbe9f;
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
 }
 
-.btnPrimary:not(:disabled):not(.disabled):active,
-.btnPrimary:not(:disabled):not(.disabled).active,
-.show > .btnPrimary.dropdown-toggle {
+.btn-primary.disabled,
+.btn-primary:disabled {
   color: #fff;
-  background-color: #2176bd;
-  border-color: #1f6fb2;
+  background-color: #09816c;
+  border-color: #09816c;
 }
 
-.btnPrimary:not(:disabled):not(.disabled):active:focus,
-.btnPrimary:not(:disabled):not(.disabled).active:focus,
-.show > .btnPrimary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
-}
-
-.btnOutlinePrimary {
-  color: #3490dc;
-  border-color: #3490dc;
-}
-
-.btnOutlinePrimary:hover {
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #09816c;
+  border-color: #09816c;
 }
 
-.btnOutlinePrimary:focus,
-.btnOutlinePrimary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.5);
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
 }
 
-.btnOutlinePrimary.disabled,
-.btnOutlinePrimary:disabled {
-  color: #3490dc;
+.btn-outline-primary {
+  color: #09816c;
+  border-color: #09816c;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #09816c;
+  border-color: #09816c;
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
+}
+
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+  color: #09816c;
   background-color: transparent;
 }
 
-.btnOutlinePrimary:not(:disabled):not(.disabled):active,
-.btnOutlinePrimary:not(:disabled):not(.disabled).active,
-.show > .btnOutlinePrimary.dropdown-toggle {
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #09816c;
+  border-color: #09816c;
 }
 
-.btnOutlinePrimary:not(:disabled):not(.disabled):active:focus,
-.btnOutlinePrimary:not(:disabled):not(.disabled).active:focus,
-.show > .btnOutlinePrimary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.5);
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
 }
 
 .js-cookie-consent.cookie-consent {
@@ -11472,10 +11474,10 @@ span.cookie-consent__message {
 button.js-cookie-consent-agree {
   border: none;
   border-radius: 0.25rem;
-  background: #3490dc;
+  background: #09816c;
   padding: 5px 10px;
   font-size: 16px;
-  color: #fff;
+  color: white;
 }
 
 .image-preview {
@@ -11525,5 +11527,39 @@ h4 {
 
 .no-posts .btn:hover {
   color: white;
+}
+
+.pagination > li > a {
+  background-color: white;
+  color: #09816c;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #5a5a5a;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > a {
+  color: white;
+  background-color: #09816c;
+  border: #09816c;
+}
+
+.pagination > .active > a:hover {
+  background-color: #09816c;
+  border: #09816c;
+}
+
+.pagination > .page-item.active .page-link {
+  background-color: #09816c;
+  border: #09816c;
+}
+
+.page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(46, 161, 135, 0.25);
 }
 

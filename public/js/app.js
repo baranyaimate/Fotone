@@ -1904,7 +1904,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post('/follow/' + this.userId).then(function (response) {
         _this.status = !_this.status;
-        console.log(response.data);
       })["catch"](function (errors) {
         if (errors.response.status == 401) {
           window.location = '/login';
@@ -45296,7 +45295,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("button", {
     staticClass: "btn ml-4 py-1",
-    class: { btnPrimary: !_vm.status, btnOutlinePrimary: _vm.status },
+    class: { "btn-primary": !_vm.status, "btn-outline-primary": _vm.status },
     domProps: { textContent: _vm._s(_vm.buttonText) },
     on: { click: _vm.followUser }
   })
@@ -45325,7 +45324,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("button", {
     staticClass: "btn ml-auto",
-    class: { btnPrimary: !_vm.status, btnOutlinePrimary: _vm.status },
+    class: { "btn-primary": !_vm.status, "btn-outline-primary": _vm.status },
     domProps: { textContent: _vm._s(_vm.buttonText) },
     on: { click: _vm.followUser }
   })

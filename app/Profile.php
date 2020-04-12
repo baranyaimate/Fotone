@@ -16,7 +16,7 @@ class Profile extends Model
 
     public function profileImage()
     {
-        return ($this->image) ? $this->image : 'svg/no_image_available.svg';
+        return ($this->image) ? $this->image : asset('svg/no_image_available.svg');
     }
 
     public function followers()

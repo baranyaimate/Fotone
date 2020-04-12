@@ -1,5 +1,5 @@
 <template>
-    <button class="btn ml-auto" @click="followUser" v-text="buttonText" v-bind:class="{btnPrimary: !status, btnOutlinePrimary: status}"></button>
+    <button class="btn ml-auto" @click="followUser" v-text="buttonText" v-bind:class="{'btn-primary': !status, 'btn-outline-primary': status}"></button>
 </template>
 
 <script>
@@ -18,8 +18,6 @@ import { METHODS, request } from 'http'
                 axios.post('/follow/' + this.userId)
                     .then(response => {
                         this.status = ! this.status;
-
-                        console.log(response.data);
                     })
                     .catch(errors => {
                         if (errors.response.status == 401) {
