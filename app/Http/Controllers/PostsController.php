@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use JD\Cloudder\Facades\Cloudder;
 
@@ -54,5 +55,11 @@ class PostsController extends Controller
     public function show(Post $post)
     {
         return view('posts.show', compact('post'));
+    }
+
+    public function explore()
+    {
+        $user = Auth::user();
+        return view('posts.explore', compact('user'));
     }
 }

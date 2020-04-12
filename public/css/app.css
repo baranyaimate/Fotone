@@ -11358,6 +11358,12 @@ a.text-dark:focus {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+  }
+}
+
 .no-a-styling {
   color: black;
 }

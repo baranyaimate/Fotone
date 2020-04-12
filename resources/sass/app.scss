@@ -7,6 +7,15 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// Dark Mode
+@import "darkMode";
+
+//Dark mode -----------------------------------------
+@media (prefers-color-scheme: dark) {
+  $body-bg: black;
+
+}
+
 .no-a-styling {
   color: black;
 }
