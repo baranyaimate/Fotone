@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="author" content="Baranyai Máté"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -30,6 +32,15 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="{{ asset('logo/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fotone" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="{{ asset('logo/og.png') }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fotone.baranyaimate.net" />
 </head>
 
 <body>
@@ -40,8 +51,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <img src="{{ asset('svg/logo.svg') }}" alt="{{ config('app.name') }}" width="30"
-                        height="30" class="d-inline-block align-top"> {{ config('app.name') }}
+                    <img src="{{ asset('svg/logo.svg') }}" alt="{{ config('app.name') }}" width="30" height="30"
+                        class="d-inline-block align-top"> {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

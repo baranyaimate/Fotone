@@ -66,7 +66,6 @@
             @enderror
         </div>
 
-
         <div class="pt-4">
             <button class="btn btn-primary">Save Profile</button>
         </div>
