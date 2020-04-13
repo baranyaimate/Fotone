@@ -11633,7 +11633,7 @@ button.js-cookie-consent-agree {
   width: 100%;
 }
 
-#caption {
+textarea {
   min-height: 2.5rem;
   height: 2.5rem;
 }

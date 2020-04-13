@@ -1,69 +1,74 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="max-width: 650px">
     <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PATCH')
 
-        <div class="row">
-            <div class="col-8 offset-2">
+        <div class="pt-4">
+            <h1>Edit Profile</h1>
+        </div>
 
-                <div class="row pt-4">
-                    <h1>Edit Profile</h1>
-                </div>
+        <div class="form-group">
+            <label for="title" class="col-form-label">Title</label>
 
-                <div class="form-group row">
-                    <label for="title" class="col-md-4 col-form-label">Title</label>
+            <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title"
+                value="{{ old('title') ?? $user->profile->title }}">
 
-                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') ?? $user->profile->title }}">
+            @error('title')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
 
-                    @error('title')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                
-                <div class="form-group row">
-                    <label for="description" class="col-md-4 col-form-label">Description</label>
+        <div class="form-group">
+            <label for="description" class="col-form-label">Description</label>
 
-                    <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') ?? $user->profile->description }}">
+            <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror"
+                name="description">{{ old('description') ?? $user->profile->description }}</textarea>
 
-                    @error('description')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
+            @error('description')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
 
-                <div class="form-group row">
-                    <label for="url" class="col-md-4 col-form-label">URL</label>
+        <div class="form-group">
+            <label for="url" class="col-form-label">URL</label>
 
-                    <input id="url" type="text" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ old('url') ?? $user->profile->url }}">
+            <input id="url" type="text" class="form-control @error('url') is-invalid @enderror" name="url"
+                value="{{ old('url') ?? $user->profile->url }}">
 
-                    @error('url')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
+            @error('url')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
 
-                <div class="form-group row">
-                    <label for="image" class="col-md-4 col-form-label">Profile Image</label>
+        <div class="form-group">
+            <label for="image" class="col-form-label">Profile Image</label>
 
-                    <input type="file" class="form-control-file" name="image">
-
-                    @error('image')
-                        <strong>{{ $message }}</strong>
-                    @enderror
-                </div>
-
-                <div class="row pt-4">
-                    <button class="btn btn-primary">Save Profile</button>
-                </div>
-
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="image" id="image">
+                <label class="custom-file-label" for="image">Choose file</label>
             </div>
+
+            <div class="image-preview rounded" id="imagePreview">
+                <img src="" alt="Image Preview" class="image-preview-image rounded">
+            </div>
+
+            @error('image')
+            <strong>{{ $message }}</strong>
+            @enderror
+        </div>
+
+
+        <div class="pt-4">
+            <button class="btn btn-primary">Save Profile</button>
         </div>
     </form>
 </div>
