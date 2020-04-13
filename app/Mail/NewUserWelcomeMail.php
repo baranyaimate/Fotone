@@ -16,9 +16,9 @@ class NewUserWelcomeMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -28,6 +28,6 @@ class NewUserWelcomeMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.welcome-email');
+        return $this->subject('Welcome to Fotone')->markdown('emails.welcome-email')->with('user', $this->user);
     }
 }
