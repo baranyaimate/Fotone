@@ -40,7 +40,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <img src="{{ asset('logo/apple-touch-icon.png') }}" alt="{{ config('app.name') }}" width="30"
+                    <img src="{{ asset('svg/logo.svg') }}" alt="{{ config('app.name') }}" width="30"
                         height="30" class="d-inline-block align-top"> {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -83,9 +83,11 @@
                                     Users
                                 </a>
 
+                                <!--
                                 <a class="dropdown-item" href="/explore">
                                     Explore
                                 </a>
+                                -->
 
                                 <div class="dropdown-divider"></div>
 

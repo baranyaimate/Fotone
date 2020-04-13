@@ -1,5 +1,91 @@
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: black;
+        background-color: black !important;
+    }
+
+    .navbar,
+    input,
+    textarea,
+    .dropdown-menu,
+    .index-post-card,
+    .profile-post-card {
+        background-color: rgb(28, 28, 30) !important;
+    }
+
+    .index-post-card,
+    .profile-post-card {
+        border: none !important;
+    }
+
+    .dropdown-divider {
+        border-top-color: rgb(44, 44, 46) !important;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgb(44, 44, 46) !important;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6,
+    p,
+    span,
+    label,
+    input,
+    textarea,
+    .text-center,
+    .username-text,
+    .nav-link,
+    .navbar-brand,
+    .card-header,
+    .dropdown-item,
+    .text-dark,
+    .no-a-styling {
+        color: white !important;
+    }
+
+    .nav-link:hover,
+    .navbar-brand:hover,
+    a.text-dark:hover,
+    .no-a-styling:hover {
+        color: #dbdbdb !important;
+    }
+
+    .card {
+        border: none !important;
+        background-color: rgb(28, 28, 30) !important;
+    }
+
+    .custom-checkbox .custom-control-input ~ .custom-control-label::before,
+    .custom-file .custom-file-label {
+        background-color: rgb(28, 28, 30) !important;
+    }
+
+    .custom-file .custom-file-input ~ .custom-file-label::after {
+        background-color: rgb(28, 28, 30) !important;
+        color: white !important;
+    }
+
+    .navbar-toggler {
+        color: rgba(255, 255, 255, 0.5) !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(1) !important;
+    }
+
+    hr,
+    .hr {
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
 }

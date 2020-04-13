@@ -11360,7 +11360,94 @@ a.text-dark:focus {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: black;
+    background-color: black !important;
+  }
+
+  .navbar,
+  input,
+  textarea,
+  .dropdown-menu,
+  .index-post-card,
+  .profile-post-card {
+    background-color: #1c1c1e !important;
+  }
+
+  .index-post-card,
+  .profile-post-card {
+    border: none !important;
+  }
+
+  .dropdown-divider {
+    border-top-color: #2c2c2e !important;
+  }
+
+  .dropdown-item:hover {
+    background-color: #2c2c2e !important;
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6,
+  p,
+  span,
+  label,
+  input,
+  textarea,
+  .text-center,
+  .username-text,
+  .nav-link,
+  .navbar-brand,
+  .card-header,
+  .dropdown-item,
+  .text-dark,
+  .no-a-styling {
+    color: white !important;
+  }
+
+  .nav-link:hover,
+  .navbar-brand:hover,
+  a.text-dark:hover,
+  .no-a-styling:hover {
+    color: #dbdbdb !important;
+  }
+
+  .card {
+    border: none !important;
+    background-color: #1c1c1e !important;
+  }
+
+  .custom-checkbox .custom-control-input ~ .custom-control-label::before,
+  .custom-file .custom-file-label {
+    background-color: #1c1c1e !important;
+  }
+
+  .custom-file .custom-file-input ~ .custom-file-label::after {
+    background-color: #1c1c1e !important;
+    color: white !important;
+  }
+
+  .navbar-toggler {
+    color: rgba(255, 255, 255, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .navbar-toggler-icon {
+    -webkit-filter: invert(1) !important;
+            filter: invert(1) !important;
+  }
+
+  hr,
+  .hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 }
 
@@ -11396,6 +11483,10 @@ a:hover {
 .custom-file-input:focus ~ .custom-file-label {
   border-color: #4fbe9f;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(46, 161, 135, 0.5);
+}
+
+.custom-file-input {
+  cursor: pointer;
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {

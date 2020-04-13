@@ -44,7 +44,7 @@
 
             </div>
 
-            <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+            <div class="pt-4 font-weight-bold username-text">{{ $user->profile->title }}</div>
             <p class="text-justify mb-0">{{ $user->profile->description }}</p>
             <a class="font-weight-bold" href="{{ $user->profile->url }}">{{ $user->profile->url }}</a>
 
@@ -58,7 +58,7 @@
             <div class="row">
                 @foreach($chunk as $post)
                     <div class="col-md-4">
-                        <div class="p-0 my-3 border bg-white rounded shadow">
+                        <div class="p-0 my-3 border bg-white rounded shadow profile-post-card">
                             <a href="/p/{{ $post->id }}">
                                 <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
                             </a>
