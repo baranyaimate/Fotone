@@ -1,5 +1,5 @@
 <template>
-    <button class="btn ml-4 py-1" @click="followUser" v-text="buttonText" v-bind:class="{'btn-primary': !status, 'btn-outline-primary': status}"></button>
+    <button class="d-block m-auto btn py-1" @click="followUser" v-text="buttonText" v-bind:class="{'btn-primary': !status, 'btn-outline-primary': status}"></button>
 </template>
 
 <script>

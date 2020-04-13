@@ -4,25 +4,24 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-sm-3 p-4">
-            <img src="{{ $user->profile->profileImage() }}" id="profile-picture" class="rounded-circle w-100 pr-2" alt="{{ $user->username }} profile picture" style="min-width: 70px">
+        <div class="p-2 w-100">
+            <img class="d-block m-auto rounded-circle" src="{{ $user->profile->profileImage() }}" id="profile-picture" alt="{{ $user->name }}" style="min-width: 70px">
         </div>
-        <div class="col-sm-9 pt-4">
-
-            <div class="d-flex justify-content-between align-items-baseline">
-                <div class="d-flex align-items-center pb-2">
-                    <div class="h3 mb-0">{{ $user->username }}</div>
-                    @cannot('update', $user->profile)
-                        <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
-                    @else
-                        <a href="/profile/{{ $user->id }}/edit" class="btn btn-outline-primary ml-4 py-1" style="max-width: 750px">Edit Profile</a>
-                    @endcan
-                </div>
+    </div>
+    <div class="row">
+        <div class="pt-4 w-100">
+            <div class="pb-2">
+                <h3 class="text-center h3">{{ $user->username }}</h3>
+                @cannot('update', $user->profile)
+                    <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
+                @else
+                    <button class="d-block m-auto btn btn-outline-primary py-1" onclick="location.href='/profile/{{ $user->id }}/edit'">Edit Profile</button>
+                @endcan
             </div>
 
-            <div class="d-flex">
+            <div class="d-flex justify-content-center">
 
-                <div class="pr-4 text-center"><strong>{{ $postCount }}</strong>
+                <div class="mx-2 text-center"><strong>{{ $postCount }}</strong>
                     @if($postCount <= 1) 
                         post
                     @else
@@ -30,13 +29,13 @@
                     @endif
                 </div>
 
-                <div class="pr-4 text-center">
+                <div class="mx-2 text-center">
                     <a href="/profile/{{ $user->id }}/followers" class="no-a-styling">
                         <strong>{{ $followersCount }}</strong> followers
                     </a>
                 </div>
 
-                <div class="pr-4 text-center">
+                <div class="mx-2 text-center">
                     <a href="/profile/{{ $user->id }}/following" class="no-a-styling">
                         <strong>{{ $followingCount }}</strong> following
                     </a>
@@ -44,9 +43,9 @@
 
             </div>
 
-            <div class="pt-4 font-weight-bold username-text">{{ $user->profile->title }}</div>
-            <p class="text-justify mb-0">{{ $user->profile->description }}</p>
-            <a class="font-weight-bold" href="{{ $user->profile->url }}">{{ $user->profile->url }}</a>
+            <div class="pt-4 text-center font-weight-bold profile-title-text">{{ $user->profile->title }}</div>
+            <p class="text-center mb-0">{{ $user->profile->description }}</p>
+            <a class="text-center d-block font-weight-bold" href="{{ $user->profile->url }}">{{ $user->profile->url }}</a>
 
         </div>
 
