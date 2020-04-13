@@ -11368,7 +11368,8 @@ a.text-dark:focus {
   textarea,
   .dropdown-menu,
   .index-post-card,
-  .profile-post-card {
+  .profile-post-card,
+  .cookie-consent {
     background-color: #1c1c1e !important;
   }
 

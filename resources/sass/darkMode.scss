@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: black !important;
+        background-color: $dark-mode-black !important;
     }
 
     .navbar,
@@ -8,8 +8,9 @@
     textarea,
     .dropdown-menu,
     .index-post-card,
-    .profile-post-card {
-        background-color: rgb(28, 28, 30) !important;
+    .profile-post-card,
+    .cookie-consent {
+        background-color: $dark-mode-dark-gray !important;
     }
 
     .index-post-card,
@@ -18,11 +19,11 @@
     }
 
     .dropdown-divider {
-        border-top-color: rgb(44, 44, 46) !important;
+        border-top-color: $dark-mode-gray !important;
     }
 
     .dropdown-item:hover {
-        background-color: rgb(44, 44, 46) !important;
+        background-color: $dark-mode-gray !important;
     }
 
     h1,
@@ -50,29 +51,29 @@
     .dropdown-item,
     .text-dark,
     .no-a-styling {
-        color: white !important;
+        color: $dark-mode-white !important;
     }
 
     .nav-link:hover,
     .navbar-brand:hover,
     a.text-dark:hover,
     .no-a-styling:hover {
-        color: #dbdbdb !important;
+        color: $dark-mode-light-gray !important;
     }
 
     .card {
         border: none !important;
-        background-color: rgb(28, 28, 30) !important;
+        background-color: $dark-mode-dark-gray !important;
     }
 
     .custom-checkbox .custom-control-input ~ .custom-control-label::before,
     .custom-file .custom-file-label {
-        background-color: rgb(28, 28, 30) !important;
+        background-color: $dark-mode-dark-gray !important;
     }
 
     .custom-file .custom-file-input ~ .custom-file-label::after {
-        background-color: rgb(28, 28, 30) !important;
-        color: white !important;
+        background-color: $dark-mode-dark-gray !important;
+        color: $dark-mode-white !important;
     }
 
     .navbar-toggler {
