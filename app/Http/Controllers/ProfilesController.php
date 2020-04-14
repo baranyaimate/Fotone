@@ -50,7 +50,7 @@ class ProfilesController extends Controller
 
         if(request('image'))
         {
-            $imagePath = request('image')->store('profile', 'public');
+            request('image')->store('profile', 'public');
             $image_name = $request->file('image')->getRealPath();
             
             Cloudder::upload($image_name, null, array("height"=>1500, "width"=>1500, "crop"=>"fill"));

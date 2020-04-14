@@ -37,7 +37,7 @@ class PostsController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        $imagePath = request('image')->store('uploads', 'public');
+        request('image')->store('uploads', 'public');
         $image_name = $request->file('image')->getRealPath();
 
         Cloudder::upload($image_name, null, array("height"=>1500, "width"=>1500, "crop"=>"fill"));

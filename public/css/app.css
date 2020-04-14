@@ -11369,6 +11369,7 @@ a.text-dark:focus {
   .dropdown-menu,
   .index-post-card,
   .profile-post-card,
+  .post-card,
   .cookie-consent {
     background-color: #1c1c1e !important;
   }
@@ -11399,7 +11400,6 @@ a.text-dark:focus {
   h6,
   .h6,
   p,
-  span,
   label,
   input,
   textarea,
@@ -11449,6 +11449,12 @@ a.text-dark:focus {
   hr,
   .hr {
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .alert-success {
+    border: none !important;
+    background-color: #347235 !important;
+    color: white !important;
   }
 }
 

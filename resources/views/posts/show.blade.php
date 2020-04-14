@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 <div class="container" style="max-width: 900px;">
-    <div class="bg-white rounded shadow">
+    <div class="bg-white rounded shadow post-card">
         <div class="row m-0">
             <div class="d-flex align-items-center m-3">
                 <div class="pr-3">
