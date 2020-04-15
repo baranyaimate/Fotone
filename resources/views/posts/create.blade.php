@@ -18,11 +18,11 @@
 
             <div class="custom-file">
                 <input type="file" class="custom-file-input" name="image" id="image">
-                <label class="custom-file-label" for="image">Choose file</label>
+                <label class="custom-file-label" id="custom-file-label" for="image">Choose file</label>
             </div>
 
             <div class="image-preview rounded" id="imagePreview">
-                <img src="" alt="Image Preview" class="image-preview-image rounded">
+                <img src="" alt="Image Preview" id="image-preview-image" class="image-preview-image rounded">
             </div>
 
             @error('image')

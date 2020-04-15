@@ -50,16 +50,22 @@
         </div>
 
         <div class="form-group">
-            <label for="image" class="col-form-label">Profile Image</label>
+            <label for="imageInput" class="col-form-label">Profile Image</label>
 
             <div class="custom-file">
                 <input type="file" class="custom-file-input" name="image" id="image">
-                <label class="custom-file-label" for="image">Choose file</label>
+                <label class="custom-file-label" id="custom-file-label" for="image">Choose file</label>
             </div>
 
-            <div class="image-preview rounded" id="imagePreview">
-                <img src="" alt="Image Preview" class="image-preview-image rounded">
-            </div>
+            @if(empty($user->profile->image))
+                <div class="image-preview rounded" id="imagePreview">
+                    <img src="{{ $user->profile->image }}" alt="Image Preview" id="image-preview-image" class="image-preview-image rounded">
+                </div>
+            @else
+                <div class="image-preview rounded" id="imagePreview" style="display: block">
+                    <img src="{{ $user->profile->image }}" alt="Image Preview" id="image-preview-image" class="image-preview-image rounded" style="display: block">
+                </div>
+            @endif
 
             @error('image')
             <strong>{{ $message }}</strong>

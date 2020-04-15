@@ -26,7 +26,7 @@
             </a>
         </div>
         <div class="py-2 px-2">
-            <p class="text-justify m-0">
+            <p class="text-justify m-0 hide-long-text">
                 {{ $post->caption }}
             </p>
         </div>
