@@ -12,7 +12,6 @@
 
     <title>{{ config('app.name') }}</title>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163588271-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
