@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="p-2 w-100">
-            <img class="d-block m-auto rounded-circle" src="{{ $user->profile->profileImage() }}" id="profile-picture" alt="{{ $user->name }}" style="min-width: 70px">
+            <img class="profile-picture d-block m-auto rounded-circle" src="{{ $user->profile->profileImage() }}" id="profile-picture" alt="{{ $user->name }}" style="min-width: 70px">
         </div>
     </div>
     <div class="row">
@@ -21,7 +21,7 @@
 
             <div class="d-flex justify-content-center">
 
-                <div class="mx-2 text-center"><strong>{{ $postCount }}</strong>
+                <div class="mx-2 text-center simple-text"><strong>{{ $postCount }}</strong>
                     @if($postCount <= 1) 
                         post
                     @else

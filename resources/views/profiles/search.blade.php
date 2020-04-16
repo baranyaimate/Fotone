@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
 
-    <h2>Users <span class="text-muted">({{ $users->total() }})</span></h2>
+    <h2>Results <span class="text-muted">({{ $users->total() }})</span></h2>
 
-    <form class="d-flex" action="/search">
-        <input type="text" class="form-control mr-2" name="q" id="q" placeholder="Search">
+    <form class="d-flex">
+        <input type="text" class="form-control mr-2" name="q" id="q" placeholder="Search" value="{{ $search }}">
         <button class="btn btn-primary" type="submit" id="searchBtn">Search</button>
     </form>
 
@@ -14,6 +14,7 @@
 
     @foreach($users as $user)
         <div class="d-flex align-items-center my-4">
+
             <div class="col-4">
                 <img src="{{ $user->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4" style="max-width: 125px">
             </div>

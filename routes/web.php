@@ -37,3 +37,4 @@ Route::get('/profile/{user}/following', 'ProfilesController@showFollowing')->nam
 Route::get('/profile/{user}/followers', 'ProfilesController@showFollowers')->name('profile.showFollowers');
 
 Route::get('/users', 'ProfilesController@showUsersList')->name('profile.showUsersList');
+Route::get('/search', 'ProfilesController@search');

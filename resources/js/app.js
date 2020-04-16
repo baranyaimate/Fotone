@@ -35,6 +35,7 @@ const app = new Vue({
 //Auto size textarea
 autosize(document.querySelectorAll('textarea'));
 
+//Image upload preview
 const image = document.getElementById("image");
 const previewContainer = document.getElementById("imagePreview");
 const previewImage = document.getElementById("image-preview-image");
@@ -63,5 +64,17 @@ if (image != null ) {
 		const fileName = image.value.split("\\").pop();
 		customFileLabel.classList.add("selected");
 		customFileLabel.innerHTML = fileName;
+	});
+}
+
+//Dark Mode
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	const ProfilePics = document.getElementsByClassName('profile-picture');
+	
+	Array.prototype.forEach.call(ProfilePics, function(element) {
+		const elementFileName = element.src.split("/").pop();
+		if (elementFileName == "no_image_available.svg") {
+			element.style.filter = "invert(1)";
+		}
 	});
 }

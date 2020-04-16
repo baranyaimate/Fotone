@@ -57531,7 +57531,8 @@ var app = new Vue({
   el: '#app'
 }); //Auto size textarea
 
-autosize(document.querySelectorAll('textarea'));
+autosize(document.querySelectorAll('textarea')); //Image upload preview
+
 var image = document.getElementById("image");
 var previewContainer = document.getElementById("imagePreview");
 var previewImage = document.getElementById("image-preview-image");
@@ -57557,6 +57558,18 @@ if (image != null) {
     var fileName = image.value.split("\\").pop();
     customFileLabel.classList.add("selected");
     customFileLabel.innerHTML = fileName;
+  });
+} //Dark Mode
+
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  var ProfilePics = document.getElementsByClassName('profile-picture');
+  Array.prototype.forEach.call(ProfilePics, function (element) {
+    var elementFileName = element.src.split("/").pop();
+
+    if (elementFileName == "no_image_available.svg") {
+      element.style.filter = "invert(1)";
+    }
   });
 }
 

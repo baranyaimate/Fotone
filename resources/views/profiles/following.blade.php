@@ -10,7 +10,7 @@
     @foreach($following as $following)
         <div class="d-flex align-items-center my-4">
             <div class="col-4">
-                <img src="{{ $following->profile->profileImage() }}" alt="{{ $user->name }}" class="w-100 rounded-circle mr-4" style="max-width: 125px">
+                <img src="{{ $following->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4" style="max-width: 125px">
             </div>
 
             <div class="col-8">
