@@ -10,6 +10,10 @@
 // Dark Mode
 @import "darkMode";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .no-a-styling {
   color: black;
 }

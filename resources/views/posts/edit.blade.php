@@ -15,11 +15,12 @@
             <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
         </div>
         <div class="p-3">
-            <h4>Post caption</h4>
-            <textarea style="max-height:100rem;" class="m-0 w-100 form-control @error('caption') is-invalid @enderror" maxlength="4096" type="text" name="caption">{{ $post->caption }}</textarea>
+            <label id="post-caption-label" for="post-caption-textarea">Post caption</label>
+            <textarea id="post-caption-textarea" class="m-0 w-100 form-control @error('caption') is-invalid @enderror" maxlength="4096" type="text" name="caption">{{ $post->caption }}</textarea>
         </div>
         <div class="pb-3 pl-3">
             <input class="btn btn-primary" type="submit" value="Save">
+            <a class="btn btn-outline-secondary ml-1" href="/p/{{ $post->id }}">Cancel</a>
         </div>
     </form>
 </div>

@@ -11364,7 +11364,9 @@ a.text-dark:focus {
   }
 
   .navbar,
-  input,
+  input[type=text],
+  input[type=email],
+  input[type=password],
   textarea,
   .dropdown-menu,
   .index-post-card,
@@ -11410,7 +11412,8 @@ a.text-dark:focus {
   .card-header,
   .dropdown-item,
   .text-dark,
-  .no-a-styling {
+  .no-a-styling,
+  .cookie-consent__message {
     color: white !important;
   }
 
@@ -11456,6 +11459,10 @@ a.text-dark:focus {
     background-color: #347235 !important;
     color: white !important;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .no-a-styling {

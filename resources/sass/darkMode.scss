@@ -4,7 +4,9 @@
     }
 
     .navbar,
-    input,
+    input[type=text],
+    input[type=email],
+    input[type=password],
     textarea,
     .dropdown-menu,
     .index-post-card,
@@ -50,7 +52,8 @@
     .card-header,
     .dropdown-item,
     .text-dark,
-    .no-a-styling {
+    .no-a-styling,
+    .cookie-consent__message {
         color: $dark-mode-white !important;
     }
 
@@ -93,6 +96,6 @@
     .alert-success {
         border: none !important;
         background-color: #347235 !important;
-        color: white !important;
+        color: $dark-mode-white !important;
     }
 }
