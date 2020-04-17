@@ -28,6 +28,8 @@ Route::get('/', 'PostsController@index');
 Route::get('/upload', 'PostsController@create');
 Route::post('/p', 'PostsController@store');
 Route::get('/p/{post}', 'PostsController@show');
+Route::get('/p/{post}/edit', 'PostsController@edit')->name('post.edit');
+Route::patch('/p/{post}', 'PostsController@update')->name('post.update');
 Route::get('/explore', 'PostsController@explore');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');

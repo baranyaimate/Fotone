@@ -37,7 +37,7 @@ class PostsController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        $asd = request('image')->store('uploads', 'public');
+        request('image')->store('uploads', 'public');
         $image_name = $request->file('image')->getRealPath();
 
         Cloudder::upload($image_name, null, array("height"=>1500, "width"=>1500, "crop"=>"fill"));
@@ -50,6 +50,24 @@ class PostsController extends Controller
         ]);
 
         return redirect('/profile/' . auth()->user()->id);
+    }
+
+    public function edit(Post $post, Request $request)
+    {
+        $this->authorize('update', $post);
+
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update(Post $post, Request $request)
+    {
+        $data = request()->validate([
+            'caption' => 'required|max:4096',
+        ]);
+
+        $post->update($data);
+
+        return redirect('/p/' . $post->id);
     }
 
     public function show(Post $post)

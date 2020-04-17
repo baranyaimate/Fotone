@@ -11642,6 +11642,7 @@ button.js-cookie-consent-agree {
 textarea {
   min-height: 2.5rem;
   height: 2.5rem;
+  resize: none !important;
 }
 
 .custom-file-label {
@@ -11657,7 +11658,7 @@ textarea {
 }
 
 .no-posts h2,
-h4 {
+.no-posts h4 {
   text-align: center;
 }
 
@@ -11713,5 +11714,6 @@ h4 {
 
 p {
   word-break: break-word;
+  white-space: pre-line;
 }
 

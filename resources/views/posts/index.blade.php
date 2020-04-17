@@ -11,7 +11,7 @@
     </div>
     @else
     @foreach($posts as $post)
-    <div class="index-post-card col-md-6 mx-auto mb-4 p-0 border bg-white rounded shadow">
+    <div class="index-post-card col-md-6 mx-auto my-4 p-0 border bg-white rounded shadow">
         <div class="py-3 px-2">
             <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1"
                 alt="{{ $post->user->username }}" style="max-width: 35px">
@@ -26,9 +26,7 @@
             </a>
         </div>
         <div class="py-2 px-2">
-            <p class="text-justify m-0 hide-long-text">
-                {{ $post->caption }}
-            </p>
+            <p class="text-justify m-0 hide-long-text">{{ $post->caption }}</p>
         </div>
     </div>
     @endforeach

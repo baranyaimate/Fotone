@@ -107,7 +107,10 @@ class ProfilesController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('q');
-        $users = User::where('name', 'like', '%' . $search . '%')->orWhere('username', 'like', '%' . $search . '%')->orWhere('email', 'like', '%' . $search . '%')->paginate(20);
+        $users = User::where('name', 'like', '%' . $search . '%')
+            ->orWhere('username', 'like', '%' . $search . '%')
+            ->orWhere('email', 'like', '%' . $search . '%')
+            ->paginate(20);
         $follows = array();
 
         foreach ($users as $user) {
