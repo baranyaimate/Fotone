@@ -61,6 +61,8 @@ class PostsController extends Controller
 
     public function update(Post $post, Request $request)
     {
+        $this->authorize('update', $post);
+
         $data = request()->validate([
             'caption' => 'required|max:4096',
         ]);
