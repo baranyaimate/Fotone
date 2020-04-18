@@ -13,7 +13,7 @@
             <label for="image" class="col-form-label">Image</label>
 
             <div class="custom-file">
-                <input type="file" class="custom-file-input" name="image" id="image">
+                <input type="file" class="custom-file-input" name="image" id="image" accept="image/*">
                 <label class="custom-file-label" id="custom-file-label" for="image">Choose file</label>
             </div>
 
