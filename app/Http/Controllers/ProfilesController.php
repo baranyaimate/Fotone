@@ -70,7 +70,7 @@ class ProfilesController extends Controller
 
     public function showFollowing(User $user)
     {
-        $following = User::findOrFail($user->following()->pluck('profiles.user_id'));
+        $following = User::whereIn('id', $user->following()->pluck('profiles.user_id'))->orderBy('name')->paginate(20);
         $follows = array();
 
         foreach ($following as $c) {
@@ -82,7 +82,7 @@ class ProfilesController extends Controller
 
     public function showFollowers(User $user)
     {
-        $followers = $user->profile->followers;
+        $followers = $user->profile->followers->sort()->paginate(20);
         $follows = array();
 
         foreach ($followers as $c) {
