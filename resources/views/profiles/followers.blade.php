@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <h2>{{ $user->username }} followers</h2>
+    <h2><a class="text-dark" href="/profile/{{ $user->id }}">{{ $user->username }}</a> followers</h2>
 
     <hr>
 
