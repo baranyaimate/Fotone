@@ -11372,7 +11372,8 @@ a.text-dark:focus {
   .index-post-card,
   .profile-post-card,
   .post-card,
-  .cookie-consent {
+  .cookie-consent,
+  .error-container {
     background-color: #1c1c1e !important;
   }
 
@@ -11736,5 +11737,9 @@ p {
 
 #nav-logout:hover {
   background-color: rgba(255, 0, 0, 0.05);
+}
+
+.error-container {
+  background-color: white;
 }
 

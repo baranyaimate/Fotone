@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@push('scripts')
-    <script src="/js/ImagePreview.js"></script>
-@endpush
-
 @section('content')
 <div class="container" style="max-width: 650px;">
     <form action="/p" enctype="multipart/form-data" method="post">
