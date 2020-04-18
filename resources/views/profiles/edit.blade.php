@@ -67,9 +67,11 @@
                 </div>
             @endif
 
-            @error('image')
-            <strong>{{ $message }}</strong>
-            @enderror
+            <strong id="image-upload-error">
+                @error('image')
+                {{ $message }}
+                @enderror
+            </strong>
         </div>
 
         <div class="pt-4">

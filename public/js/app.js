@@ -57537,20 +57537,24 @@ var image = document.getElementById("image");
 var previewContainer = document.getElementById("imagePreview");
 var previewImage = document.getElementById("image-preview-image");
 var customFileLabel = document.getElementById("custom-file-label");
+var imageUploadError = document.getElementById("image-upload-error");
 
 if (image != null) {
   image.addEventListener("change", function () {
     var file = this.files[0];
+    var isImage = file && file['type'].split('/')[0] === "image";
 
-    if (file) {
+    if (file && isImage) {
       var reader = new FileReader();
       previewContainer.style.display = "block";
       previewImage.style.display = "block";
+      imageUploadError.innerHTML = "";
       reader.addEventListener("load", function () {
         previewImage.setAttribute("src", this.result);
       });
       reader.readAsDataURL(file);
     } else {
+      imageUploadError.innerHTML = "The image must be an image.";
       previewImage.style.display = null;
       previewContainer.style.display = null;
     }

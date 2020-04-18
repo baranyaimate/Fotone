@@ -21,9 +21,11 @@
                 <img src="" alt="Image Preview" id="image-preview-image" class="image-preview-image rounded">
             </div>
 
-            @error('image')
-            <strong>{{ $message }}</strong>
-            @enderror
+            <strong id="image-upload-error">
+                @error('image')
+                {{ $message }}
+                @enderror
+            </strong>
         </div>
 
         <div class="form-group">
