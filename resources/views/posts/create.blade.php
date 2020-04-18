@@ -13,7 +13,7 @@
             <label for="image" class="col-form-label">Image</label>
 
             <div class="custom-file">
-                <input type="file" class="custom-file-input" name="image" id="image" accept="image/*">
+                <input type="file" class="custom-file-input" name="image" id="image" accept="image/*" required>
                 <label class="custom-file-label" id="custom-file-label" for="image">Choose file</label>
             </div>
 
@@ -31,7 +31,7 @@
         <div class="form-group">
             <label for="caption" class="col-form-label">Post caption</label>
 
-            <textarea maxlength="4096" id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption">{{ old('caption') }}</textarea>
+            <textarea maxlength="4096" id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption" required>{{ old('caption') }}</textarea>
 
             @error('caption')
             <span class="invalid-feedback" role="alert">
