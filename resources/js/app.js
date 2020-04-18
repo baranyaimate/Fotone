@@ -42,7 +42,7 @@ const previewImage = document.getElementById("image-preview-image");
 const customFileLabel = document.getElementById("custom-file-label");
 const imageUploadError = document.getElementById("image-upload-error");
 
-if (image != null ) {
+if (image != null) {
 	image.addEventListener("change", function () {
 		const file = this.files[0];
 		const isImage = file && file['type'].split('/')[0] === "image";
