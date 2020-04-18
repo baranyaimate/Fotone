@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <meta name="author" content="Baranyai Máté"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Baranyai Máté" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -76,62 +76,53 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link rounded" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link rounded" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->username }} <span class="caret"></span>
+                        <li class="nav-item">
+                            <a class="nav-link rounded" href="/profile/{{ Auth::user()->id }}">
+                                Profile
                             </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                                <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">
-                                    Profile
-                                </a>
-
-                                <a class="dropdown-item" href="/upload">
-                                    New Post
-                                </a>
-
-                                <a class="dropdown-item" href="/users">
-                                    Users
-                                </a>
-
-                                <!--
-                                <a class="dropdown-item" href="/explore">
-                                    Explore
-                                </a>
-                                -->
-
-                                <div class="dropdown-divider"></div>
-
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
                         </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+                        <li class="nav-item">
+                            <a class="nav-link rounded" href="/upload">
+                                New Post
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link rounded" href="/users">
+                                Users
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link rounded" id="nav-logout" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        </li>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                </div>
+                </li>
+                @endguest
+                </ul>
+            </div>
+    </div>
+    </nav>
+
+    <main class="py-4">
+        @yield('content')
+    </main>
     </div>
 </body>
 

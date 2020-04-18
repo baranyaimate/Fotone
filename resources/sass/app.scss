@@ -265,3 +265,17 @@ p {
   word-break: break-word;
   white-space: pre-line;
 }
+
+.nav-link:hover {
+  background-color: rgba(128, 128, 128, .05);
+}
+
+.nav-link:active,
+.nav-link.active {
+  background-color: $theme-dark-green;
+  color: white !important;
+}
+
+#nav-logout:hover {
+  background-color: rgba(255, 0, 0, .05);
+}
