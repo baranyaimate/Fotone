@@ -11152,6 +11152,11 @@ button.js-cookie-consent-agree {
   color: white;
 }
 
+.custom-control-input,
+.custom-control-label {
+  cursor: pointer;
+}
+
 .image-preview {
   width: 70%;
   margin: 1rem auto;

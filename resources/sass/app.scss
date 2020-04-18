@@ -174,6 +174,11 @@ button.js-cookie-consent-agree {
   @extend .mx-2;
 }
 
+.custom-control-input,
+.custom-control-label {
+  cursor: pointer;
+}
+
 //Image upload
 .image-preview {
   width: 70%;
