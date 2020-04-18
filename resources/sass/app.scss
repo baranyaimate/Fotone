@@ -24,9 +24,7 @@ html {
 }
 
 #profile-picture {
-  max-width: 150px !important;
-  min-width: 77px !important;
-  height: auto;
+  max-width: 150px;
 }
 
 a {
@@ -140,7 +138,7 @@ a:hover {
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
-  color: #fff;
+  color: white;
   background-color: $theme-dark-green;
   border-color: $theme-dark-green;
 }
@@ -148,7 +146,7 @@ a:hover {
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba($theme-shadow-green, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba($theme-shadow-green, .5);
 }
 
 .js-cookie-consent.cookie-consent {
@@ -194,7 +192,7 @@ button.js-cookie-consent-agree {
 }
 
 textarea {
-  min-height: 2.5rem;
+  min-height: 1.5rem;
   height: 2.5rem;
   resize: none !important;
 }
@@ -278,6 +276,11 @@ p {
 
 #nav-logout:hover {
   background-color: rgba(255, 0, 0, .05);
+}
+
+#nav-logout:active,
+#nav-logout.active {
+  color: rgba(0, 0, 0, .5);
 }
 
 .error-container {

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', " | " . $user->username)
+
 @section('content')
 <div class="container">
 
@@ -62,7 +64,7 @@
                                 <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
                             </a>
                             <div class="d-md-none py-2 px-2">
-                                <p class="d-flex d-md-none py-2 text-justify m-0">{{ $post->caption }}</p>
+                                <p class="d-md-none py-1 text-justify m-0 hide-long-text">{{ $post->caption }}</p>
                             </div>
                         </div>
                     </div>

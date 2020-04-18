@@ -74,8 +74,9 @@
             </strong>
         </div>
 
-        <div class="pt-4">
+        <div class="pb-3 pl-3">
             <button class="btn btn-primary">Save Profile</button>
+            <a class="btn btn-outline-secondary ml-1" href="/profile/{{ $user->id }}">Cancel</a>
         </div>
     </form>
 </div>

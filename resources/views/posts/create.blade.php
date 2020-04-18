@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', " | New Post")
+
 @section('content')
 <div class="container" style="max-width: 650px;">
     <form action="/p" enctype="multipart/form-data" method="post">

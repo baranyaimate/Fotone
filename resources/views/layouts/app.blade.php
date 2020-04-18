@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}</title>
+    <title>{{ config('app.name') }}@yield('title')</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163588271-1"></script>
     <script>
@@ -75,35 +75,37 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li class="nav-item mt-2 mt-md-0">
+                            <a class="nav-link rounded pl-2" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link rounded" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link rounded pl-2" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="/profile/{{ Auth::user()->id }}">
+                        <li class="nav-item mt-2 mt-md-0">
+                            <a class="nav-link rounded pl-2" href="/profile/{{ Auth::user()->id }}">
                                 Profile
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link rounded" href="/upload">
+                            <a class="nav-link rounded pl-2" href="/upload">
                                 New Post
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link rounded" href="/users">
+                            <a class="nav-link rounded pl-2" href="/users">
                                 Users
                             </a>
                         </li>
 
+                        <div class="dropdown-divider"></div>
+
                         <li class="nav-item">
-                            <a class="nav-link rounded" id="nav-logout" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a class="nav-link rounded pl-2" id="nav-logout" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
