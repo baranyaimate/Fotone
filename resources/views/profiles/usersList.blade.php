@@ -5,7 +5,7 @@
 
     <h2>Users <span class="text-muted">({{ $users->total() }})</span></h2>
 
-    <form class="d-flex" action="/search">
+    <form class="d-flex pt-2" action="/search">
         <input type="text" class="form-control mr-2" name="q" id="q" placeholder="Search">
         <button class="btn btn-primary" type="submit" id="searchBtn">Search</button>
     </form>
