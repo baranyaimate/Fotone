@@ -60,7 +60,9 @@ if (image != null ) {
 	
 			reader.readAsDataURL(file);
 		} else {
-			imageUploadError.innerHTML = "The image must be an image.";
+			if (!isImage) {
+				imageUploadError.innerHTML = "The image must be an image.";
+			}
 			previewImage.style.display = null;
 			previewContainer.style.display = null;
 		}
