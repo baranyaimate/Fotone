@@ -73,8 +73,8 @@ class ProfilesController extends Controller
         $following = User::findOrFail($user->following()->pluck('profiles.user_id'));
         $follows = array();
 
-        foreach ($following as $user) {
-            $follows[] = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+        foreach ($following as $c) {
+            $follows[] = (auth()->user()) ? auth()->user()->following->contains($c->id) : false;
         }
 
         return view('profiles.following', compact('following', 'user', 'follows'));
@@ -85,8 +85,8 @@ class ProfilesController extends Controller
         $followers = $user->profile->followers;
         $follows = array();
 
-        foreach ($followers as $user) {
-            $follows[] = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+        foreach ($followers as $c) {
+            $follows[] = (auth()->user()) ? auth()->user()->following->contains($c->id) : false;
         }
 
         return view('profiles.followers', compact('followers', 'user', 'follows'));
