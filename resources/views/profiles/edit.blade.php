@@ -54,7 +54,7 @@
 
             <div class="custom-file">
                 <input type="file" class="custom-file-input" name="image" id="image" accept="image/*">
-                <label class="custom-file-label" id="custom-file-label" for="image">Choose file</label>
+                <label class="custom-file-label text-truncate" id="custom-file-label" for="image">Choose file</label>
             </div>
 
             @if(empty($user->profile->image))

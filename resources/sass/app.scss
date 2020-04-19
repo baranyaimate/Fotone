@@ -202,10 +202,6 @@ textarea {
   resize: none !important;
 }
 
-.custom-file-label {
-  overflow: hidden;
-}
-
 .no-posts {
   display: flex;
   flex-direction: column;
@@ -254,6 +250,13 @@ textarea {
 
 .page-link:focus {
   box-shadow: 0 0 0 0.2rem rgba($theme-shadow-green, 0.25);
+}
+
+.pagination .page-link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hide-long-text {
