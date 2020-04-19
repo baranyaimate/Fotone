@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container" style="max-width: 650px;">
-    <form action="/p" enctype="multipart/form-data" method="post">
+    <form action="/post" enctype="multipart/form-data" method="post">
         @csrf
 
         <div class="pt-4">

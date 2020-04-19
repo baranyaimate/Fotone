@@ -202,18 +202,23 @@ textarea {
   resize: none !important;
 }
 
-.no-posts {
+.no-posts,
+.no-users {
   display: flex;
   flex-direction: column;
 }
 .no-posts h2,
-.no-posts h4 {
+.no-posts h4,
+.no-users h2,
+.no-users h4 {
   text-align: center;
 }
-.no-posts .btn {
+.no-posts .btn,
+.no-users .btn {
   margin: auto;
 }
-.no-posts .btn:hover {
+.no-posts .btn:hover,
+.no-users .btn:hover {
   color: white;
 }
 

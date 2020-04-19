@@ -16,27 +16,30 @@ use Illuminate\Support\Facades\Input;
 
 Auth::routes();
 
-/*
-Route::get('/email', function() {
-  return new NewUserWelcomeMail();
-});
-*/
-
+//Follow
 Route::post('follow/{user}', 'FollowsController@store');
 
+//Index
 Route::get('/', 'PostsController@index');
-Route::get('/upload', 'PostsController@create');
-Route::post('/p', 'PostsController@store');
-Route::get('/p/{post}', 'PostsController@show');
-Route::get('/p/{post}/edit', 'PostsController@edit')->name('post.edit');
-Route::patch('/p/{post}', 'PostsController@update')->name('post.update');
-Route::get('/explore', 'PostsController@explore');
 
+//Upload
+Route::get('/upload', 'PostsController@create');
+
+//Post
+Route::post('/post', 'PostsController@store');
+Route::get('/post/{post}', 'PostsController@show');
+Route::get('/post/{post}/edit', 'PostsController@edit')->name('post.edit');
+Route::patch('/post/{post}', 'PostsController@update')->name('post.update');
+
+//Profile
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
-Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
+Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::get('/profile/{user}/following', 'ProfilesController@showFollowing')->name('profile.showFollowing');
 Route::get('/profile/{user}/followers', 'ProfilesController@showFollowers')->name('profile.showFollowers');
 
-Route::get('/users', 'ProfilesController@showUsersList')->name('profile.showUsersList');
+//List users
+Route::get('/users', 'ProfilesController@listUsers');
+
+//Search
 Route::get('/search', 'ProfilesController@search');

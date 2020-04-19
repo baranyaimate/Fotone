@@ -92,7 +92,7 @@ class ProfilesController extends Controller
         return view('profiles.followers', compact('followers', 'user', 'follows'));
     }
 
-    public function showUsersList()
+    public function listUsers()
     {
         $users = User::orderBy('name')->paginate(20);
         $follows = array();
@@ -101,7 +101,7 @@ class ProfilesController extends Controller
             $follows[] = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
         }
 
-        return view('profiles.usersList', compact('users', 'follows'));
+        return view('profiles.list', compact('users', 'follows'));
     }
 
     public function search(Request $request)
