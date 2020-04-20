@@ -74,28 +74,28 @@
                     <!-- Right Side Of Navbar -->
                     @guest
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li class="nav-item mt-2 mt-md-0">
+                            <a class="nav-link rounded px-2" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link rounded" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link rounded px-2" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     </ul>
                     @endguest
                     @auth
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="/profile/{{ Auth::user()->id }}">
+                        <li class="nav-item mt-2 mt-md-0">
+                            <a class="nav-link rounded px-2" href="/profile/{{ Auth::user()->id }}">
                                 Profile
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link rounded" href="/upload">
+                            <a class="nav-link rounded px-2" href="/upload">
                                 New Post
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link rounded" href="/users">
+                            <a class="nav-link rounded px-2" href="/users">
                                 Users
                             </a>
                         </li>
@@ -103,7 +103,7 @@
                         <div class="dropdown-divider"></div>
 
                         <li class="nav-item">
-                            <a id="nav-logout" class="nav-link rounded" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a id="nav-logout" class="nav-link rounded px-2" href="{{ route('logout') }}" onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
