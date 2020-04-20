@@ -53,8 +53,8 @@
             <label for="imageInput" class="col-form-label">Profile Image</label>
 
             <div class="custom-file">
-                <input type="file" class="custom-file-input" name="image" id="image" accept="image/*">
-                <label class="custom-file-label text-truncate" id="custom-file-label" for="image">Choose file</label>
+                <input type="file" class="custom-file-input" name="image" id="image">
+                <label class="custom-file-label" id="custom-file-label" for="image">Choose file</label>
             </div>
 
             @if(empty($user->profile->image))
@@ -67,16 +67,13 @@
                 </div>
             @endif
 
-            <strong id="image-upload-error">
-                @error('image')
-                {{ $message }}
-                @enderror
-            </strong>
+            @error('image')
+            <strong>{{ $message }}</strong>
+            @enderror
         </div>
 
-        <div class="pb-3 pl-3">
+        <div class="pt-4">
             <button class="btn btn-primary">Save Profile</button>
-            <a class="btn btn-outline-secondary ml-1" href="/profile/{{ $user->id }}">Cancel</a>
         </div>
     </form>
 </div>

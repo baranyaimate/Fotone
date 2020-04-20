@@ -8,7 +8,7 @@
                 <a class="text-dark" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
             </span>
             @if($post->user->id == Auth::user()->id)
-                <a class="btn btn-outline-primary float-right" style="margin-top: 2px;" href="/post/{{ $post->id }}/edit#post-caption-label">
+                <a class="btn btn-outline-primary float-right" style="margin-top: 2px;" href="/p/{{ $post->id }}/edit#post-caption-label">
                     Edit
                 </a>
             @endif

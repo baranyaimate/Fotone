@@ -69,7 +69,7 @@ class PostsController extends Controller
 
         $post->update($data);
 
-        return redirect('/post/' . $post->id);
+        return redirect('/p/' . $post->id);
     }
 
     public function show(Post $post)

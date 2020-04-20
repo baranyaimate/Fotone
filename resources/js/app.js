@@ -40,19 +40,16 @@ const image = document.getElementById("image");
 const previewContainer = document.getElementById("imagePreview");
 const previewImage = document.getElementById("image-preview-image");
 const customFileLabel = document.getElementById("custom-file-label");
-const imageUploadError = document.getElementById("image-upload-error");
 
-if (image != null) {
+if (image != null ) {
 	image.addEventListener("change", function () {
 		const file = this.files[0];
-		const isImage = file && file['type'].split('/')[0] === "image";
-
-		if (file && isImage) {
+	
+		if (file) {
 			const reader = new FileReader();
 	
 			previewContainer.style.display = "block";
 			previewImage.style.display = "block";
-			imageUploadError.innerHTML = "";
 	
 			reader.addEventListener("load", function () {
 				previewImage.setAttribute("src", this.result);
@@ -60,9 +57,6 @@ if (image != null) {
 	
 			reader.readAsDataURL(file);
 		} else {
-			if (!isImage) {
-				imageUploadError.innerHTML = "The image must be an image.";
-			}
 			previewImage.style.display = null;
 			previewContainer.style.display = null;
 		}

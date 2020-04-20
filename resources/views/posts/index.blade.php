@@ -21,7 +21,7 @@
 
         </div>
         <div>
-            <a href="/post/{{ $post->id }}">
+            <a href="/p/{{ $post->id }}">
                 <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
             </a>
         </div>

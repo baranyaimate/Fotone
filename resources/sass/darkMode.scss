@@ -12,8 +12,7 @@
     .index-post-card,
     .profile-post-card,
     .post-card,
-    .cookie-consent,
-    .error-container {
+    .cookie-consent {
         background-color: $dark-mode-dark-gray !important;
     }
 
@@ -99,16 +98,4 @@
         background-color: #347235 !important;
         color: $dark-mode-white !important;
     }
-
-    .pagination li a,
-    .pagination li span {
-        background-color: $dark-mode-dark-gray !important;
-        border-color: $dark-mode-gray !important;
-     }
-
-     .pagination li.active > span,
-     .pagination li:active > span {
-        background-color: $theme-dark-green !important;
-        color: $dark-mode-white !important;
-     }
 }
