@@ -5,7 +5,7 @@
 
     <h2>Users <span class="text-muted">({{ $users->total() }})</span></h2>
 
-    <form class="d-flex" action="/search">
+    <form class="d-flex pt-2" action="/search">
         <input type="text" class="form-control mr-2" name="q" id="q" placeholder="Search">
         <button class="btn btn-primary" type="submit" id="searchBtn">Search</button>
     </form>
@@ -19,7 +19,12 @@
             </div>
 
             <div class="col-8">
-                <h3 class="d-inline-block"><a class="no-a-styling" href="/profile/{{ $user->id }}">{{ $user->name }} <span class="text-muted h4">({{ $user->username }})</a></span></h3>
+                <h3 class="d-inline-block">
+                    <a class="no-a-styling" href="/profile/{{ $user->id }}">
+                        {{ $user->name }}
+                        <span class="text-muted h4">({{ $user->username }})</span>
+                    </a>
+                </h3>
                 @if($user->id != Auth::user()->id)
                     <following-follow-button user-id="{{ $user->id }}" follows="{{ $follows[$loop->index] }}"></following-follow-button>
                 @endif

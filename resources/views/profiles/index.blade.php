@@ -58,7 +58,7 @@
                 @foreach($chunk as $post)
                     <div class="col-md-4">
                         <div class="p-0 my-3 border bg-white rounded shadow profile-post-card">
-                            <a href="/p/{{ $post->id }}">
+                            <a href="/post/{{ $post->id }}">
                                 <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
                             </a>
                             <div class="d-md-none py-2 px-2">

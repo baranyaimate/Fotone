@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <meta name="author" content="Baranyai Máté"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Baranyai Máté" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -39,9 +39,9 @@
     <link rel="manifest" href="{{ asset('logo/site.webmanifest') }}">
     <link rel="mask-icon" href="{{ asset('logo/safari-pinned-tab.svg') }}" color="#5bbad5">
     <link rel="shortcut icon" href="{{ asset('logo/favicon.ico') }}">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-config" content="{{ asset('logo/browserconfig.xml') }}">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-config" content="{{ asset('logo/browserconfig.xml') }}" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Fotone" />
@@ -72,59 +72,48 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
+                    @guest
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link rounded" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
-                        @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link rounded" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->username }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                                <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">
-                                    Profile
-                                </a>
-
-                                <a class="dropdown-item" href="/upload">
-                                    New Post
-                                </a>
-
-                                <a class="dropdown-item" href="/users">
-                                    Users
-                                </a>
-
-                                <!--
-                                <a class="dropdown-item" href="/explore">
-                                    Explore
-                                </a>
-                                -->
-
-                                <div class="dropdown-divider"></div>
-
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
                     </ul>
+                    @endguest
+                    @auth
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link rounded" href="/profile/{{ Auth::user()->id }}">
+                                Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link rounded" href="/upload">
+                                New Post
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link rounded" href="/users">
+                                Users
+                            </a>
+                        </li>
+
+                        <div class="dropdown-divider"></div>
+
+                        <li class="nav-item">
+                            <a id="nav-logout" class="nav-link rounded" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        </li>
+                    </ul>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    @endauth
                 </div>
             </div>
         </nav>

@@ -29,7 +29,7 @@ Vue.component('following-follow-button', require('./components/FollowingFollowBu
  */
 
 const app = new Vue({
-    el: '#app',
+	el: '#app',
 });
 
 //Auto size textarea
@@ -40,23 +40,29 @@ const image = document.getElementById("image");
 const previewContainer = document.getElementById("imagePreview");
 const previewImage = document.getElementById("image-preview-image");
 const customFileLabel = document.getElementById("custom-file-label");
+const imageUploadError = document.getElementById("image-upload-error");
 
-if (image != null ) {
+if (image != null) {
 	image.addEventListener("change", function () {
 		const file = this.files[0];
-	
-		if (file) {
+		const isImage = file && file['type'].split('/')[0] === "image";
+
+		if (file && isImage) {
 			const reader = new FileReader();
-	
+
 			previewContainer.style.display = "block";
 			previewImage.style.display = "block";
-	
+			imageUploadError.innerHTML = "";
+
 			reader.addEventListener("load", function () {
 				previewImage.setAttribute("src", this.result);
 			});
-	
+
 			reader.readAsDataURL(file);
 		} else {
+			if (!isImage) {
+				imageUploadError.innerHTML = "The image must be an image.";
+			}
 			previewImage.style.display = null;
 			previewContainer.style.display = null;
 		}
@@ -70,8 +76,8 @@ if (image != null ) {
 //Dark Mode
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 	const ProfilePics = document.getElementsByClassName('profile-picture');
-	
-	Array.prototype.forEach.call(ProfilePics, function(element) {
+
+	Array.prototype.forEach.call(ProfilePics, function (element) {
 		const elementFileName = element.src.split("/").pop();
 		if (elementFileName == "no_image_available.svg") {
 			element.style.filter = "invert(1)";

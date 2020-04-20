@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <h2>{{ $user->username }} followers</h2>
+    <h2><a class="text-dark" href="/profile/{{ $user->id }}">{{ $user->username }}</a> followers</h2>
 
     <hr>
 
@@ -14,7 +14,12 @@
             </div>
 
             <div class="col-8">
-                <h3 class="d-inline-block"><a class="no-a-styling" href="/profile/{{ $follower->id }}">{{ $follower->name }} <span class="text-muted h4">({{ $follower->username }})</a></span></h3>
+                <h3 class="d-inline-block">
+                    <a class="no-a-styling" href="/profile/{{ $follower->id }}">
+                        {{ $follower->name }}
+                        <span class="text-muted h4">({{ $follower->username }})</span>
+                    </a>
+                </h3>
                 @if($follower->id != Auth::user()->id)
                     <following-follow-button user-id="{{ $follower->id }}" follows="{{ $follows[$loop->index] }}"></following-follow-button>
                 @endif
@@ -24,6 +29,12 @@
             <hr>
         @endif
     @endforeach
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            {{ $followers->links() }}
+        </div>
+    </div>
 
 </div>
 @endsection

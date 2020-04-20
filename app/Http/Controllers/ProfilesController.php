@@ -70,7 +70,7 @@ class ProfilesController extends Controller
 
     public function showFollowing(User $user)
     {
-        $following = User::findOrFail($user->following()->pluck('profiles.user_id'));
+        $following = User::whereIn('id', $user->following()->pluck('profiles.user_id'))->orderBy('name')->paginate(20);
         $follows = array();
 
         foreach ($following as $c) {
@@ -82,7 +82,7 @@ class ProfilesController extends Controller
 
     public function showFollowers(User $user)
     {
-        $followers = $user->profile->followers;
+        $followers = $user->profile->followers->sort()->paginate(20);
         $follows = array();
 
         foreach ($followers as $c) {
@@ -92,7 +92,7 @@ class ProfilesController extends Controller
         return view('profiles.followers', compact('followers', 'user', 'follows'));
     }
 
-    public function showUsersList()
+    public function listUsers()
     {
         $users = User::orderBy('name')->paginate(20);
         $follows = array();
@@ -101,7 +101,7 @@ class ProfilesController extends Controller
             $follows[] = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
         }
 
-        return view('profiles.usersList', compact('users', 'follows'));
+        return view('profiles.list', compact('users', 'follows'));
     }
 
     public function search(Request $request)

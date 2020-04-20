@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 <div class="container" style="max-width: 900px;">
-    <form action="/p/{{ $post->id }}" enctype="multipart/form-data" method="post" 
+    <form action="/post/{{ $post->id }}" method="post" 
         class="index-post-card col-md-9 mx-auto mb-4 p-0 border bg-white rounded shadow">
         @csrf
         @method('PATCH')
@@ -20,7 +20,7 @@
         </div>
         <div class="pb-3 pl-3">
             <input class="btn btn-primary" type="submit" value="Save">
-            <a class="btn btn-outline-secondary ml-1" href="/p/{{ $post->id }}">Cancel</a>
+            <a class="btn btn-outline-secondary ml-1" href="/post/{{ $post->id }}">Cancel</a>
         </div>
     </form>
 </div>
