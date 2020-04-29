@@ -18,7 +18,7 @@
                 <img src="{{ $user->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4" style="max-width: 125px">
             </div>
 
-            <div class="col-8">
+            <div class="col-8 p-0">
                 <h3 class="d-inline-block">
                     <a class="no-a-styling" href="/profile/{{ $user->id }}">
                         {{ $user->name }}
