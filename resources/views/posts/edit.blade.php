@@ -22,7 +22,7 @@
         <div class="pb-3 pl-3">
             <input class="btn btn-primary" type="submit" value="Save">
             <a class="btn btn-outline-secondary ml-1" href="/post/{{ $post->id }}">Cancel</a>
-            <button class="btn btn-outline-danger mr-3 float-right" data-toggle="modal" data-target="#confirmDeleteModal">Delete</button>
+            <a class="btn btn-outline-danger mr-3 float-right" href="" data-toggle="modal" data-target="#confirmDeleteModal">Delete</a>
         </div>
     </form>
 
@@ -33,7 +33,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="confirmDeleteModalLabel">Delete post</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" data-target="#confirmDeleteModal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
