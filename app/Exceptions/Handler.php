@@ -61,6 +61,11 @@ class Handler extends ExceptionHandler
                     break;
             }
         }
+
+        if ($exception instanceof TokenMismatchException && $request->getRequestUri() === '/logout') {
+            return redirect('/');
+        }
+
         return parent::render($request, $exception);
     }
 }
