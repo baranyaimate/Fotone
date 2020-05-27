@@ -83,6 +83,11 @@ class PostsController extends Controller
         
         $post->forceDelete();
 
+        $path_parts = pathinfo($post->image);
+        $public_id = $path_parts['filename'];
+
+        Cloudder::destroy($public_id);
+
         return redirect('/profile/' . $post->user->id);
     }
 }
