@@ -88,6 +88,6 @@ class PostsController extends Controller
 
         Cloudder::destroy($public_id);
 
-        return redirect('/profile/' . $post->user->id);
+        return redirect('/user/' . $post->user->id);
     }
 }
