@@ -34,11 +34,11 @@ Route::get('/post/{post}/delete', 'PostsController@delete')->name('post.delete')
 
 
 //Profile
-Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
-Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
-Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
-Route::get('/profile/{user}/following', 'ProfilesController@showFollowing')->name('profile.showFollowing');
-Route::get('/profile/{user}/followers', 'ProfilesController@showFollowers')->name('profile.showFollowers');
+Route::get('/user/{user}', 'ProfilesController@index')->name('profile.show');
+Route::patch('/user/{user}', 'ProfilesController@update')->name('profile.update');
+Route::get('/user/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
+Route::get('/user/{user}/following', 'ProfilesController@showFollowing')->name('profile.showFollowing');
+Route::get('/user/{user}/followers', 'ProfilesController@showFollowers')->name('profile.showFollowers');
 
 //List users
 Route::get('/users', 'ProfilesController@listUsers')->name('profile.listUsers');

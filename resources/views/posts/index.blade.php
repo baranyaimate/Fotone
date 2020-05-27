@@ -16,7 +16,7 @@
             <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1"
                 alt="{{ $post->user->username }}" style="max-width: 35px">
             <span class="font-weight-bold">
-                <a class="text-dark" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                <a class="text-dark" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
             </span>
 
         </div>

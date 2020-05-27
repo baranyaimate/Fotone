@@ -5,7 +5,7 @@
             <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1"
                 alt="{{ $post->user->username }}" style="max-width: 45px">
             <span class="font-weight-bold ml-1">
-                <a class="text-dark" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                <a class="text-dark" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
             </span>
             @if($post->user->id == Auth::user()->id)
                 <a class="btn btn-outline-primary float-right" style="margin-top: 2px;" href="/post/{{ $post->id }}/edit#post-caption-label">

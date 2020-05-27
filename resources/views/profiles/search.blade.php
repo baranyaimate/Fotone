@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-8">
-                    <h3 class="d-inline-block"><a class="no-a-styling" href="/profile/{{ $user->id }}">{{ $user->name }} <span class="text-muted h4">({{ $user->username }})</a></span></h3>
+                    <h3 class="d-inline-block"><a class="no-a-styling" href="/user/{{ $user->id }}">{{ $user->name }} <span class="text-muted h4">({{ $user->username }})</a></span></h3>
                     @if($user->id != Auth::user()->id)
                         <following-follow-button user-id="{{ $user->id }}" follows="{{ $follows[$loop->index] }}"></following-follow-button>
                     @endif

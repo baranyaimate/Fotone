@@ -3,21 +3,25 @@
 @section('content')
 <div class="container">
 
-    <h2><a class="text-dark" href="/profile/{{ $user->id }}">{{ $user->username }}</a> followers</h2>
+    <h2><a class="text-dark" href="/user/{{ $user->id }}">{{ $user->username }}</a> followers</h2>
 
     <hr>
 
     @foreach($followers as $follower)
         <div class="d-flex align-items-center my-4">
             <div class="col-4">
-                <img src="{{ $follower->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4" style="max-width: 125px">
+                <a href="/user/{{ $user->id }}">
+                    <img src="{{ $follower->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4" style="max-width: 125px">
+                </a>
             </div>
 
             <div class="col-8">
                 <h3 class="d-inline-block">
-                    <a class="no-a-styling" href="/profile/{{ $follower->id }}">
+                    <a class="no-a-styling d-block" href="/user/{{ $user->id }}">
                         {{ $follower->name }}
-                        <span class="text-muted h4">({{ $follower->username }})</span>
+                    </a>
+                    <a class="no-a-styling d-block" href="/user/{{ $user->id }}">
+                        <span class="text-muted h5">{{ $follower->username }}</span>
                     </a>
                 </h3>
                 @if($follower->id != Auth::user()->id)

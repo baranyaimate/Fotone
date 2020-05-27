@@ -8,7 +8,7 @@
             <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1"
                 alt="{{ $post->user->username }}" style="max-width: 45px">
             <span class="font-weight-bold ml-1">
-                <a class="text-dark" href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                <a class="text-dark" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
             </span>
         </div>
         <div>
@@ -33,7 +33,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="confirmDeleteModalLabel">Delete post</h5>
-                    <button type="button" class="close" data-dismiss="modal" data-target="#confirmDeleteModal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

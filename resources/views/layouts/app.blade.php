@@ -85,7 +85,7 @@
                     @auth
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mt-2 mt-md-0">
-                            <a class="nav-link rounded px-2" href="/profile/{{ Auth::user()->id }}">
+                            <a class="nav-link rounded px-2" href="/user/{{ Auth::user()->id }}">
                                 Profile
                             </a>
                         </li>

@@ -15,14 +15,18 @@
     @foreach($users as $user)
         <div class="d-flex align-items-center my-4">
             <div class="col-4">
-                <img src="{{ $user->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4" style="max-width: 125px">
+                <a href="/user/{{ $user->id }}">
+                    <img src="{{ $user->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4" style="max-width: 125px">
+                </a>
             </div>
 
             <div class="col-8 p-0">
                 <h3 class="d-inline-block">
-                    <a class="no-a-styling" href="/profile/{{ $user->id }}">
+                    <a class="no-a-styling d-block" href="/user/{{ $user->id }}">
                         {{ $user->name }}
-                        <span class="text-muted h4">({{ $user->username }})</span>
+                    </a>
+                    <a class="no-a-styling d-block" href="/user/{{ $user->id }}">
+                        <span class="text-muted h5">{{ $user->username }}</span>
                     </a>
                 </h3>
                 @if($user->id != Auth::user()->id)

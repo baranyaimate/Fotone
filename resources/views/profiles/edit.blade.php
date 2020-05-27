@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" style="max-width: 650px">
-    <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="post">
+    <form action="/user/{{ $user->id }}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PATCH')
 

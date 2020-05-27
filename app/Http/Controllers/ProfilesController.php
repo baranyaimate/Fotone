@@ -65,7 +65,7 @@ class ProfilesController extends Controller
             $imageArray ?? [],
         ));
 
-        return redirect("/profile/{$user->id}");
+        return redirect("/user/{$user->id}");
     }
 
     public function showFollowing(User $user)

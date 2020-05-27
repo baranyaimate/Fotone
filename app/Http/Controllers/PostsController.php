@@ -49,7 +49,7 @@ class PostsController extends Controller
             'image' => $url,
         ]);
 
-        return redirect('/profile/' . auth()->user()->id);
+        return redirect('/user/' . auth()->user()->id);
     }
 
     public function edit(Post $post, Request $request)
