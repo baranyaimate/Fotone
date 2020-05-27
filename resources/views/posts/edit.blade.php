@@ -21,6 +21,7 @@
         <div class="pb-3 pl-3">
             <input class="btn btn-primary" type="submit" value="Save">
             <a class="btn btn-outline-secondary ml-1" href="/post/{{ $post->id }}">Cancel</a>
+            <a class="btn btn-outline-danger mr-3 float-right" href="/post/{{ $post->id }}/delete">Delete</a>
         </div>
     </form>
 </div>

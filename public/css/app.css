@@ -11343,8 +11343,7 @@ p {
   background-color: white;
 }
 
-p {
-  -moz-text-align-last: left;
-       text-align-last: left;
-}
+/*p {
+  text-align-last: left;
+}*/
 

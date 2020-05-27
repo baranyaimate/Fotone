@@ -30,6 +30,8 @@ Route::post('/post', 'PostsController@store');
 Route::get('/post/{post}', 'PostsController@show');
 Route::get('/post/{post}/edit', 'PostsController@edit')->name('post.edit');
 Route::patch('/post/{post}', 'PostsController@update')->name('post.update');
+Route::get('/post/{post}/delete', 'PostsController@delete')->name('post.delete');
+
 
 //Profile
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');

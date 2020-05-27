@@ -77,9 +77,12 @@ class PostsController extends Controller
         return view('posts.show', compact('post'));
     }
 
-    public function explore()
+    public function delete(Post $post, Request $request)
     {
-        $user = Auth::user();
-        return view('posts.explore', compact('user'));
+        $this->authorize('update', $post);
+        
+        $post->forceDelete();
+
+        return redirect('/profile/' . $post->user->id);
     }
 }

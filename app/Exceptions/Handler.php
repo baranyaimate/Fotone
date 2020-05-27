@@ -58,7 +58,6 @@ class Handler extends ExceptionHandler
                     return response()->view('errors.500', [], 500);
                     break;
                 default:
-                    return response()->view('errors.error', []);
                     break;
             }
         }
