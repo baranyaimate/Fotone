@@ -42,7 +42,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" href="/post/{{ $post->id }}/delete">Yes</button>
+                    <a type="button" class="btn btn-danger" href="/post/{{ $post->id }}/delete">Yes</a>
                 </div>
             </div>
         </div>
