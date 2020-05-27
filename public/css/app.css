@@ -11343,3 +11343,7 @@ p {
   background-color: white;
 }
 
+.modal-footer button {
+  min-width: 60px;
+}
+
