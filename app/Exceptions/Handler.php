@@ -46,7 +46,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($this->isHttpException($exception)) {
+        /*if ($this->isHttpException($exception)) {
             switch ($exception->getStatusCode()) {
                 case 404:
                     return response()->view('errors.404', [], 404);
@@ -57,7 +57,7 @@ class Handler extends ExceptionHandler
                 default:
                     break;
             }
-        }
+        }*/
 
         if ($exception instanceof TokenMismatchException && $request->getRequestUri() === '/logout') {
             return redirect('/');
