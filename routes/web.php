@@ -32,7 +32,6 @@ Route::get('/post/{post}/edit', 'PostsController@edit')->name('post.edit');
 Route::patch('/post/{post}', 'PostsController@update')->name('post.update');
 Route::get('/post/{post}/delete', 'PostsController@delete')->name('post.delete');
 
-
 //Profile
 Route::get('/user/{user}', 'ProfilesController@index')->name('profile.show');
 Route::patch('/user/{user}', 'ProfilesController@update')->name('profile.update');
