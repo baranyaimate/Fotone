@@ -15,7 +15,7 @@
                 </a>
             </div>
 
-            <div class="col-8">
+            <div class="col-8 p-0">
                 <h3 class="d-inline-block">
                     <a class="no-a-styling d-block" href="/user/{{ $user->id }}">
                         {{ $follower->name }}
