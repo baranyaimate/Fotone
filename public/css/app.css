@@ -11347,11 +11347,3 @@ p {
   min-width: 60px;
 }
 
-.like {
-  background-image: url("/svg/heart.svg");
-}
-
-.like-outline {
-  background-image: url("/svg/heart-outline.svg");
-}
-

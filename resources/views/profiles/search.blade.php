@@ -46,7 +46,7 @@
 
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            {{ $users->links() }}
+            {{ $users->appends(request()->except('page'))->links() }}
         </div>
     </div>
 
