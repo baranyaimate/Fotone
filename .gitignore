@@ -2,7 +2,8 @@
 /public/hot
 /public/storage
 /public/css
-/public/js
+/public/js/app.js
+/public/js/popper.js
 /storage/*.key
 /vendor
 .env
