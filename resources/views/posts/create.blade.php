@@ -31,7 +31,7 @@
         <div class="form-group">
             <label for="caption" class="col-form-label">Post caption</label>
 
-            <textarea maxlength="4096" id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption" required>{{ old('caption') }}</textarea>
+            <textarea maxlength="4096" placeholder="Write a caption" id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption" required>{{ old('caption') }}</textarea>
 
             @error('caption')
             <span class="invalid-feedback" role="alert">
