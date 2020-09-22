@@ -1,5 +1,5 @@
 {
-    "name": "Fotone",
+    "name": "fotone",
     "private": true,
     "scripts": {
         "dev": "npm run development",

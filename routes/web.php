@@ -11,36 +11,40 @@
 |
 */
 
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\FollowsController;
+
 use App\Mail\NewUserWelcomeMail;
 use Illuminate\Support\Facades\Input;
 
 Auth::routes();
 
 //Follow
-Route::post('follow/{user}', 'FollowsController@store');
+Route::post('follow/{user}', [FollowsController::class, 'store']);
 
 //Index
-Route::get('/', 'PostsController@index');
+Route::get('/', [PostsController::class, 'index']);
 
 //Upload
-Route::get('/upload', 'PostsController@create');
+Route::get('/upload', [PostsController::class, 'create']);
 
 //Post
-Route::post('/post', 'PostsController@store');
-Route::get('/post/{post}', 'PostsController@show');
-Route::get('/post/{post}/edit', 'PostsController@edit')->name('post.edit');
-Route::patch('/post/{post}', 'PostsController@update')->name('post.update');
-Route::get('/post/{post}/delete', 'PostsController@delete')->name('post.delete');
+Route::post('/post', [PostsController::class, 'store']);
+Route::get('/post/{post}', [PostsController::class, 'show']);
+Route::get('/post/{post}/edit', [PostsController::class, 'edit'])->name('post.edit');
+Route::patch('/post/{post}', [PostsController::class, 'update'])->name('post.update');
+Route::get('/post/{post}/delete', [PostsController::class, 'delete'])->name('post.delete');
 
 //Profile
-Route::get('/user/{user}', 'ProfilesController@index')->name('profile.show');
-Route::patch('/user/{user}', 'ProfilesController@update')->name('profile.update');
-Route::get('/user/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
-Route::get('/user/{user}/following', 'ProfilesController@showFollowing')->name('profile.showFollowing');
-Route::get('/user/{user}/followers', 'ProfilesController@showFollowers')->name('profile.showFollowers');
+Route::get('/user/{user}', [ProfilesController::class, 'index'])->name('profile.show');
+Route::patch('/user/{user}', [ProfilesController::class, 'update'])->name('profile.update');
+Route::get('/user/{user}/edit', [ProfilesController::class, 'edit'])->name('profile.edit');
+Route::get('/user/{user}/following', [ProfilesController::class, 'howFollowing'])->name('profile.showFollowing');
+Route::get('/user/{user}/followers', [ProfilesController::class, 'showFollowers'])->name('profile.showFollowers');
 
 //List users
-Route::get('/users', 'ProfilesController@listUsers')->name('profile.listUsers');
+Route::get('/users', [ProfilesController::class, 'listUsers'])->name('profile.listUsers');
 
 //Search
-Route::get('/search', 'ProfilesController@search');
+Route::get('/search', [ProfilesController::class, 'search']);
