@@ -51,7 +51,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fotone.baranyaimate.net" />
+    <meta property="og:url" content="http://fotone.baranyaimate.net" />
 </head>
 
 <body>
@@ -59,11 +59,11 @@
     @include('cookieConsent::index')
 
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <img src="{{ asset('svg/logo.svg') }}" alt="{{ config('app.name') }}" width="30" height="30"
-                        class="d-inline-block align-top"> {{ config('app.name') }}
+                    <img src="{{ asset('svg/logo.svg') }}" alt="{{ config('app.name') }}" width="30" height="30"  class="d-inline-block align-top">
+                    {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -72,7 +72,6 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
                     @guest
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mt-2 mt-md-0">
@@ -84,32 +83,31 @@
                     </ul>
                     @endguest
                     @auth
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mt-2 mt-md-0">
+                    <div class="navbar-nav ml-auto">
+                        <div class="nav-item mt-2 mt-md-0">
                             <a class="nav-link rounded px-2" href="/user/{{ Auth::user()->id }}">
                                 Profile
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </div>
+                        <div class="nav-item">
                             <a class="nav-link rounded px-2" href="/upload">
                                 New Post
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </div>
+                        <div class="nav-item">
                             <a class="nav-link rounded px-2" href="/users">
                                 Users
                             </a>
-                        </li>
+                        </div>
 
                         <div class="dropdown-divider"></div>
 
-                        <li class="nav-item">
-                            <a id="nav-logout" class="nav-link rounded px-2" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
+                        <div class="nav-item">
+                            <a id="nav-logout" class="nav-link rounded px-2" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
