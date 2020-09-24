@@ -14,7 +14,7 @@
             <label for="title" class="col-form-label">Title</label>
 
             <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title"
-                value="{{ old('title') ?? $user->profile->title }}">
+                value="{{ old('title') ?? $user->profile->title }}" placeholder="Title">
 
             @error('title')
             <span class="invalid-feedback" role="alert">
@@ -26,7 +26,7 @@
         <div class="form-group">
             <label for="description" class="col-form-label">Description</label>
 
-            <textarea maxlength="4096" id="description" class="form-control @error('description') is-invalid @enderror"
+            <textarea maxlength="4096" id="description" placeholder="Write a description" class="form-control @error('description') is-invalid @enderror"
                 name="description">{{ old('description') ?? $user->profile->description }}</textarea>
 
             @error('description')
@@ -40,7 +40,7 @@
             <label for="url" class="col-form-label">URL</label>
 
             <input id="url" type="text" class="form-control @error('url') is-invalid @enderror" name="url"
-                value="{{ old('url') ?? $user->profile->url }}">
+                value="{{ old('url') ?? $user->profile->url }}" placeholder="URL">
 
             @error('url')
             <span class="invalid-feedback" role="alert">
