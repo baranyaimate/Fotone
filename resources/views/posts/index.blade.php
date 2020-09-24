@@ -12,21 +12,33 @@
     @else
     @foreach($posts as $post)
     <div class="index-post-card col-md-6 mx-auto my-4 p-0 border bg-white rounded shadow">
-        <div class="py-3 px-2">
-            <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1 mw-35" alt="{{ $post->user->username }}">
-            <span class="font-weight-bold">
-                <a class="text-dark" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
-            </span>
 
+        <div class="p-3 d-flex justify-content-between">
+            <div>
+                <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1 mw-45" alt="{{ $post->user->username }}">
+                <div class="d-inline-block align-middle ml-1">
+                    <a class="text-dark font-weight-bold" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                    <br>
+                    <time datetime="{{ $post->created_at }}" class="text-muted d-block mt-n1">{{ $post->getTimeAgo($post->created_at) }}</time>
+                </div>
+            </div>
+            @if($post->user->id == Auth::user()->id)
+                <a class="btn btn-outline-primary d-flex align-self-center" href="/post/{{ $post->id }}/edit#post-caption-label">
+                    Edit
+                </a>
+            @endif
         </div>
+
         <div>
             <a href="/post/{{ $post->id }}">
                 <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
             </a>
         </div>
+
         <div class="py-2 px-2">
             <p class="text-justify m-0 hide-long-text">{{ $post->caption }}</p>
         </div>
+
     </div>
     @endforeach
     @endif
