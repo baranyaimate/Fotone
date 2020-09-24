@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="p-2 w-100">
-            <img class="profile-picture d-block m-auto rounded-circle" src="{{ $user->profile->profileImage() }}" id="profile-picture" alt="{{ $user->name }}" style="min-width: 70px">
+            <img class="profile-picture d-block m-auto rounded-circle mw-70" src="{{ $user->profile->profileImage() }}" id="profile-picture" alt="{{ $user->name }}">
         </div>
     </div>
     <div class="row">

@@ -13,8 +13,7 @@
     @foreach($posts as $post)
     <div class="index-post-card col-md-6 mx-auto my-4 p-0 border bg-white rounded shadow">
         <div class="py-3 px-2">
-            <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1"
-                alt="{{ $post->user->username }}" style="max-width: 35px">
+            <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1 mw-35" alt="{{ $post->user->username }}">
             <span class="font-weight-bold">
                 <a class="text-dark" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
             </span>

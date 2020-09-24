@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="max-width: 650px;">
+<div class="container mw-650">
     <form action="/post" enctype="multipart/form-data" method="post">
         @csrf
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="max-width: 650px">
+<div class="container mw-650">
     <form action="/user/{{ $user->id }}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PATCH')
@@ -62,8 +62,8 @@
                     <img src="{{ $user->profile->image }}" alt="Image Preview" id="image-preview-image" class="image-preview-image rounded">
                 </div>
             @else
-                <div class="image-preview rounded" id="imagePreview" style="display: block">
-                    <img src="{{ $user->profile->image }}" alt="Image Preview" id="image-preview-image" class="image-preview-image rounded" style="display: block">
+                <div class="image-preview rounded d-block" id="imagePreview">
+                    <img src="{{ $user->profile->image }}" alt="Image Preview" id="image-preview-image" class="image-preview-image rounded d-block">
                 </div>
             @endif
 

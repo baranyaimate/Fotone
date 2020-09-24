@@ -1,12 +1,11 @@
 @extends('layouts.app') @section('content')
-<div class="container" style="max-width: 900px;">
+<div class="container mw-900">
     <form action="/post/{{ $post->id }}" method="post"
         class="index-post-card col-md-9 mx-auto mb-4 p-0 border bg-white rounded shadow">
         @csrf
         @method('PATCH')
         <div class="p-3">
-            <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1"
-                alt="{{ $post->user->username }}" style="max-width: 45px">
+            <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1 mw-45" alt="{{ $post->user->username }}">
             <span class="font-weight-bold ml-1">
                 <a class="text-dark" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
             </span>

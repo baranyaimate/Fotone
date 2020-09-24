@@ -21,7 +21,7 @@
             <div class="d-flex align-items-center my-4">
 
                 <div class="col-4">
-                    <img src="{{ $user->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4" style="max-width: 125px">
+                    <img src="{{ $user->profile->profileImage() }}" alt="{{ $user->name }}" class="profile-picture w-100 rounded-circle mr-4 mw-125">
                 </div>
 
                 <div class="col-8 p-0">
