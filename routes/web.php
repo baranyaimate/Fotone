@@ -40,7 +40,7 @@ Route::get('/post/{post}/delete', [PostsController::class, 'delete'])->name('pos
 Route::get('/user/{user}', [ProfilesController::class, 'index'])->name('profile.show');
 Route::patch('/user/{user}', [ProfilesController::class, 'update'])->name('profile.update');
 Route::get('/user/{user}/edit', [ProfilesController::class, 'edit'])->name('profile.edit');
-Route::get('/user/{user}/following', [ProfilesController::class, 'howFollowing'])->name('profile.showFollowing');
+Route::get('/user/{user}/following', [ProfilesController::class, 'showFollowing'])->name('profile.showFollowing');
 Route::get('/user/{user}/followers', [ProfilesController::class, 'showFollowers'])->name('profile.showFollowers');
 
 //List users
