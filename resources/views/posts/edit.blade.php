@@ -17,7 +17,7 @@
         <div class="p-3">
             <label id="post-caption-label" for="post-caption-textarea">Post caption</label>
             <textarea id="post-caption-textarea" class="m-0 w-100 form-control @error('caption') is-invalid @enderror"
-                maxlength="4096" type="text" name="caption">{{ $post->caption }}</textarea>
+                maxlength="4096" name="caption">{{ $post->caption }}</textarea>
         </div>
         <div class="pb-3 pl-3">
             <input class="btn btn-primary" type="submit" value="Save">

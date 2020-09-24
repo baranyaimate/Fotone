@@ -26,7 +26,7 @@
         <div class="form-group">
             <label for="description" class="col-form-label">Description</label>
 
-            <textarea maxlength="4096" id="description" type="text" class="form-control @error('description') is-invalid @enderror"
+            <textarea maxlength="4096" id="description" class="form-control @error('description') is-invalid @enderror"
                 name="description">{{ old('description') ?? $user->profile->description }}</textarea>
 
             @error('description')
