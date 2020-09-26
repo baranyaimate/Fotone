@@ -6,9 +6,11 @@
         @method('PATCH')
         <div class="p-3">
             <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1 mw-45" alt="{{ $post->user->username }}">
-            <span class="font-weight-bold ml-1">
-                <a class="text-dark" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
-            </span>
+            <div class="d-inline-block align-middle ml-1">
+                <a class="text-dark" href="{{ route('profile.show', ['user' => $post->user->id]) }}">{{ $post->user->username }}</a>
+                <br>
+                <time datetime="{{ $post->created_at }}" class="text-muted d-block mt-n1">{{ $post->getTimeAgo($post->created_at) }}</time>
+            </div>
         </div>
         <div>
             <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
@@ -20,7 +22,7 @@
         </div>
         <div class="pb-3 pl-3">
             <input class="btn btn-primary" type="submit" value="Save">
-            <a class="btn btn-outline-secondary ml-1" href="/post/{{ $post->id }}">Cancel</a>
+            <a class="btn btn-outline-secondary ml-1" href="{{ route('post.show', ['post' => $post->id]) }}">Cancel</a>
             <a class="btn btn-outline-danger mr-3 float-right" href="" data-toggle="modal" data-target="#confirmDeleteModal">Delete</a>
         </div>
     </form>
