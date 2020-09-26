@@ -10,6 +10,18 @@
 // Dark Mode
 @import "darkMode";
 
+// Pagination
+@import "pagination";
+
+// Image Upload
+@import "imageUpload";
+
+// Cookie Consent
+@import "cookieConsent";
+
+// PWA
+@import "PWA";
+
 html {
   scroll-behavior: smooth;
 }
@@ -151,121 +163,6 @@ a:hover {
   box-shadow: 0 0 0 0.2rem rgba($theme-shadow-green, 0.5);
 }
 
-.js-cookie-consent.cookie-consent {
-  position: fixed;
-  bottom: 0;
-  margin: 0;
-  padding: 15px;
-  text-align: center;
-  width: 100%;
-  background-color: #f0f2f1;
-  z-index: 9999;
-}
-
-span.cookie-consent__message {
-  color: #1f1f21;
-}
-
-button.js-cookie-consent-agree {
-  border: none;
-  border-radius: 0.25rem;
-  background: $theme-dark-green;
-  padding: 5px 10px;
-  font-size: 16px;
-  color: white;
-  @extend .mx-2;
-}
-
-//Image upload
-.image-preview {
-  width: 70%;
-  margin: 1rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #ccc;
-  display: none;
-}
-
-.image-preview-image {
-  display: none;
-  width: 100%;
-  border: 1px solid;
-}
-
-textarea {
-  min-height: 2.5rem;
-  height: 2.5rem;
-  resize: none !important;
-}
-
-.custom-file-label {
-  overflow: hidden;
-}
-
-.no-posts,
-.no-users {
-  display: flex;
-  flex-direction: column;
-}
-.no-posts h2,
-.no-posts h4,
-.no-users h2,
-.no-users h4 {
-  text-align: center;
-}
-.no-posts .btn,
-.no-users .btn {
-  margin: auto;
-}
-.no-posts .btn:hover,
-.no-users .btn:hover {
-  color: white;
-}
-
-//Pagination
-.pagination > li > a {
-  background-color: white;
-  color: $theme-dark-green;
-}
-
-.pagination > li > a:focus,
-.pagination > li > a:hover,
-.pagination > li > span:focus,
-.pagination > li > span:hover {
-  color: #5a5a5a;
-  background-color: #eee;
-  border-color: #ddd;
-}
-
-.pagination > .active > a {
-  color: white;
-  background-color: $theme-dark-green;
-  border: $theme-dark-green;
-}
-
-.pagination > .active > a:hover {
-  background-color: $theme-dark-green;
-  border: $theme-dark-green;
-}
-
-.pagination > .page-item.active .page-link {
-  background-color: $theme-dark-green;
-  border: $theme-dark-green;
-}
-
-.page-link:focus {
-  box-shadow: 0 0 0 0.2rem rgba($theme-shadow-green, 0.25);
-}
-
-.pagination .page-link {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .hide-long-text {
   overflow: hidden;
   display: -webkit-box;
@@ -296,10 +193,6 @@ p {
 #nav-logout:active,
 #nav-logout.active {
   color: rgba(0, 0, 0, .7) !important;
-}
-
-.error-container {
-  background-color: white;
 }
 
 .modal-footer button {
