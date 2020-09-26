@@ -11,7 +11,9 @@
             </span>
         </div>
         <div>
-            <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+            <div class="img-placeholder">
+                <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+            </div>
         </div>
         <div class="p-3">
             <label id="post-caption-label" for="post-caption-textarea">Post caption</label>

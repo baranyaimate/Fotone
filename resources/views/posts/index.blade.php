@@ -31,7 +31,9 @@
 
         <div>
             <a href="/post/{{ $post->id }}">
-                <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+                <div class="img-placeholder">
+                    <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+                </div>
             </a>
         </div>
 

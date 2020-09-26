@@ -59,7 +59,9 @@
                     <div class="col-md-4">
                         <div class="p-0 my-3 border bg-white rounded shadow profile-post-card">
                             <a href="/post/{{ $post->id }}">
-                                <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
+                                <div class="img-placeholder">
+                                    <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
+                                </div>
                             </a>
                             <div class="d-md-none py-2 px-2">
                                 <p class="d-flex d-md-none py-2 text-justify m-0">{{ $post->caption }}</p>

@@ -17,7 +17,9 @@
             @endif
         </div>
         <div>
-            <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+            <div class="img-placeholder">
+                <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100">
+            </div>
         </div>
         <div class="p-3">
             <p class="text-justify m-0">{{ $post->caption }}</p>
