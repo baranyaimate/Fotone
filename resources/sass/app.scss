@@ -328,3 +328,11 @@ p {
 .mw-900 {
   max-width: 900px;
 }
+
+@media (display-mode: standalone) {
+  body {
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+ }
+}
