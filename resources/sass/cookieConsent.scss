@@ -1,0 +1,24 @@
+.js-cookie-consent.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    background-color: #f0f2f1;
+    z-index: 9999;
+  }
+  
+  span.cookie-consent__message {
+    color: #1f1f21;
+  }
+  
+  button.js-cookie-consent-agree {
+    border: none;
+    border-radius: 0.25rem;
+    background: $theme-dark-green;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: white;
+    @extend .mx-2;
+  }

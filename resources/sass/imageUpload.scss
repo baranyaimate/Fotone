@@ -1,0 +1,46 @@
+.image-preview {
+    width: 70%;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ccc;
+    display: none;
+  }
+  
+  .image-preview-image {
+    display: none;
+    width: 100%;
+    border: 1px solid;
+  }
+  
+  textarea {
+    min-height: 2.5rem;
+    height: 2.5rem;
+    resize: none !important;
+  }
+  
+  .custom-file-label {
+    overflow: hidden;
+  }
+  
+  .no-posts,
+  .no-users {
+    display: flex;
+    flex-direction: column;
+  }
+  .no-posts h2,
+  .no-posts h4,
+  .no-users h2,
+  .no-users h4 {
+    text-align: center;
+  }
+  .no-posts .btn,
+  .no-users .btn {
+    margin: auto;
+  }
+  .no-posts .btn:hover,
+  .no-users .btn:hover {
+    color: white;
+  }
