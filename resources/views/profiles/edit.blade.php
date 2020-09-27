@@ -11,19 +11,6 @@
         </div>
 
         <div class="form-group">
-            <label for="title" class="col-form-label">Title</label>
-
-            <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title"
-                value="{{ old('title') ?? $user->profile->title }}" placeholder="Title">
-
-            @error('title')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-
-        <div class="form-group">
             <label for="description" class="col-form-label">Description</label>
 
             <textarea maxlength="4096" id="description" placeholder="Write a description" class="form-control @error('description') is-invalid @enderror"

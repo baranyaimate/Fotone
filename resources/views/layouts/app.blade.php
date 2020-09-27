@@ -95,7 +95,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link rounded px-2" href="{{ route('settings') }}">
+                            <a class="nav-link rounded px-2" href="{{ route('profile.edit', Auth::user()->id) }}">
                                 Settings
                             </a>
                         </div>

@@ -14,8 +14,6 @@
                 <h3 class="text-center h3">{{ $user->username }}</h3>
                 @cannot('update', $user->profile)
                     <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
-                @else
-                    <button class="d-block m-auto btn btn-outline-primary py-1" onclick="location.href='{{ route('profile.edit', $user->id) }}'">Edit Profile</button>
                 @endcan
             </div>
 
@@ -43,7 +41,6 @@
 
             </div>
 
-            <div class="pt-4 text-center font-weight-bold profile-title-text">{{ $user->profile->title }}</div>
             <p class="text-center mb-0">{{ $user->profile->description }}</p>
             <a class="text-center d-block font-weight-bold" href="{{ $user->profile->url }}">{{ $user->profile->url }}</a>
 
@@ -59,7 +56,7 @@
                     <div class="col-md-4">
                         <div class="p-0 my-3 border bg-white rounded shadow profile-post-card">
                             <a href="{{ route('post.show', $post->id) }}">
-                                <div class="img-placeholder">
+                                <div class="img-placeholder asd">
                                     <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
                                 </div>
                             </a>
