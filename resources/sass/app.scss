@@ -224,3 +224,10 @@ p {
 .mw-900 {
   max-width: 900px;
 }
+
+.index-post-card {
+  margin: 1.5rem auto;
+}
+.index-post-card:first-child {
+  margin-top: 0;
+}

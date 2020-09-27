@@ -11,7 +11,7 @@
     </div>
     @else
     @foreach($posts as $post)
-    <div class="index-post-card col-md-6 mx-auto my-4 p-0 border bg-white rounded shadow">
+    <div class="index-post-card col-md-6 p-0 border bg-white rounded shadow">
 
         <div class="p-3 d-flex justify-content-between">
             <div>

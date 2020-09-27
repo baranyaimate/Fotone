@@ -56,7 +56,7 @@
                     <div class="col-md-4">
                         <div class="p-0 my-3 border bg-white rounded shadow profile-post-card">
                             <a href="{{ route('post.show', $post->id) }}">
-                                <div class="img-placeholder asd">
+                                <div class="img-placeholder">
                                     <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
                                 </div>
                             </a>
