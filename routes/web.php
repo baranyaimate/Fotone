@@ -15,7 +15,6 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\FollowsController;
 
-use App\Mail\NewUserWelcomeMail;
 use Illuminate\Support\Facades\Input;
 
 Auth::routes();
@@ -24,14 +23,14 @@ Auth::routes();
 Route::post('follow/{user}', [FollowsController::class, 'store']);
 
 //Index
-Route::get('/', [PostsController::class, 'index']);
+Route::get('/', [PostsController::class, 'index'])->name('index');
 
 //Upload
-Route::get('/upload', [PostsController::class, 'create']);
+Route::get('/upload', [PostsController::class, 'create'])->name('upload');
 
 //Post
 Route::post('/post', [PostsController::class, 'store']);
-Route::get('/post/{post}', [PostsController::class, 'show']);
+Route::get('/post/{post}', [PostsController::class, 'show'])->name('post.show');
 Route::get('/post/{post}/edit', [PostsController::class, 'edit'])->name('post.edit');
 Route::patch('/post/{post}', [PostsController::class, 'update'])->name('post.update');
 Route::get('/post/{post}/delete', [PostsController::class, 'delete'])->name('post.delete');
@@ -44,7 +43,7 @@ Route::get('/user/{user}/following', [ProfilesController::class, 'showFollowing'
 Route::get('/user/{user}/followers', [ProfilesController::class, 'showFollowers'])->name('profile.showFollowers');
 
 //List users
-Route::get('/users', [ProfilesController::class, 'listUsers'])->name('profile.listUsers');
+Route::get('/users', [ProfilesController::class, 'listUsers'])->name('listUsers');
 
 //Search
-Route::get('/search', [ProfilesController::class, 'search']);
+Route::get('/search', [ProfilesController::class, 'search'])->name('search');

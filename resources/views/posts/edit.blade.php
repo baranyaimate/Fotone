@@ -7,7 +7,7 @@
         <div class="p-3">
             <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1 mw-45" alt="{{ $post->user->username }}">
             <span class="font-weight-bold ml-1">
-                <a class="text-dark" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                <a class="text-dark" href="{{ route('profile.show', $post->user->id) }}">{{ $post->user->username }}</a>
             </span>
         </div>
         <div>
@@ -22,7 +22,7 @@
         </div>
         <div class="pb-3 pl-3">
             <input class="btn btn-primary" type="submit" value="Save">
-            <a class="btn btn-outline-secondary ml-1" href="/post/{{ $post->id }}">Cancel</a>
+            <a class="btn btn-outline-secondary ml-1" href="{{ route('post.show', $post->id) }}">Cancel</a>
             <a class="btn btn-outline-danger mr-3 float-right" href="" data-toggle="modal" data-target="#confirmDeleteModal">Delete</a>
         </div>
     </form>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onClick="window.location.href='/post/{{ $post->id }}/delete'">Yes</button>
+                    <button type="button" class="btn btn-danger" onClick="window.location.href='{{ route('post.delete', $post->id) }}'">Yes</button>
                 </div>
             </div>
         </div>

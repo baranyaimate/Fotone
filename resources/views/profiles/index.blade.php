@@ -15,7 +15,7 @@
                 @cannot('update', $user->profile)
                     <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                 @else
-                    <button class="d-block m-auto btn btn-outline-primary py-1" onclick="location.href='/user/{{ $user->id }}/edit'">Edit Profile</button>
+                    <button class="d-block m-auto btn btn-outline-primary py-1" onclick="location.href='{{ route('profile.edit', $user->id) }}'">Edit Profile</button>
                 @endcan
             </div>
 
@@ -30,13 +30,13 @@
                 </div>
 
                 <div class="mx-2 text-center">
-                    <a href="/user/{{ $user->id }}/followers" class="no-a-styling">
+                    <a href="{{ route('profile.showFollowers', $user->id) }}" class="no-a-styling">
                         <strong>{{ $followersCount }}</strong> followers
                     </a>
                 </div>
 
                 <div class="mx-2 text-center">
-                    <a href="/user/{{ $user->id }}/following" class="no-a-styling">
+                    <a href="{{ route('profile.showFollowing', $user->id) }}" class="no-a-styling">
                         <strong>{{ $followingCount }}</strong> following
                     </a>
                 </div>
@@ -58,7 +58,7 @@
                 @foreach($chunk as $post)
                     <div class="col-md-4">
                         <div class="p-0 my-3 border bg-white rounded shadow profile-post-card">
-                            <a href="/post/{{ $post->id }}">
+                            <a href="{{ route('post.show', $post->id) }}">
                                 <div class="img-placeholder">
                                     <img src="{{ $post->image }}" alt="{{ $post->caption }}" class="w-100 rounded">
                                 </div>

@@ -85,17 +85,22 @@
                     @auth
                     <div class="navbar-nav ml-auto">
                         <div class="nav-item mt-2 mt-md-0">
-                            <a class="nav-link rounded px-2" href="/user/{{ Auth::user()->id }}">
+                            <a class="nav-link rounded px-2" href="{{ route('profile.show', Auth::user()->id) }}">
                                 Profile
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link rounded px-2" href="/upload">
+                            <a class="nav-link rounded px-2" href="{{ route('upload') }}">
                                 New Post
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link rounded px-2" href="/users">
+                            <a class="nav-link rounded px-2" href="{{ route('settings') }}">
+                                Settings
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link rounded px-2" href="{{ route('listUsers') }}">
                                 Users
                             </a>
                         </div>

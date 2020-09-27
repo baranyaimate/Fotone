@@ -5,13 +5,13 @@
             <div>
                 <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1 mw-45" alt="{{ $post->user->username }}">
                 <div class="d-inline-block align-middle ml-1">
-                    <a class="text-dark font-weight-bold" href="/user/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                    <a class="text-dark font-weight-bold" href="{{ route('profile.show', $post->user->id) }}">{{ $post->user->username }}</a>
                     <br>
                     <time datetime="{{ $post->created_at }}" class="text-muted d-block mt-n1">{{ $post->getTimeAgo($post->created_at) }}</time>
                 </div>
             </div>
             @if($post->user->id == Auth::user()->id)
-                <a class="btn btn-outline-primary d-flex align-self-center" href="/post/{{ $post->id }}/edit#post-caption-label">
+                <a class="btn btn-outline-primary d-flex align-self-center" href="{{ route('post.edit', $post->id) }}#post-caption-label">
                     Edit
                 </a>
             @endif
