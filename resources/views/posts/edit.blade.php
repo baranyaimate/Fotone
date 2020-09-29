@@ -6,9 +6,11 @@
         @method('PATCH')
         <div class="p-3">
             <img src="{{ $post->user->profile->profileImage() }}" class="profile-picture rounded-circle pr-1 mw-45" alt="{{ $post->user->username }}">
-            <span class="font-weight-bold ml-1">
-                <a class="text-dark" href="{{ route('profile.show', $post->user->id) }}">{{ $post->user->username }}</a>
-            </span>
+            <div class="d-inline-block align-middle ml-1">
+                <a class="text-dark font-weight-bold" href="{{ route('profile.show', $post->user->id) }}">{{ $post->user->username }}</a>
+                <br>
+                <time datetime="{{ $post->created_at }}" class="text-muted d-block mt-n1">{{ $post->getTimeAgo($post->created_at) }}</time>
+            </div>
         </div>
         <div>
             <div class="img-placeholder">
