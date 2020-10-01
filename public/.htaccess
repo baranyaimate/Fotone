@@ -13,6 +13,9 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://fotone.baranyaimate.net/$1 [R,L]
 </IfModule>
 
 # gzip
