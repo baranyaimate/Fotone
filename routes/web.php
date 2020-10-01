@@ -17,6 +17,10 @@ use App\Http\Controllers\FollowsController;
 
 use Illuminate\Support\Facades\Input;
 
+if (env('APP_ENV') === 'production') {
+    URL::forceScheme('https');
+}
+
 Auth::routes();
 
 //Follow
