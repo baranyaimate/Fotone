@@ -232,13 +232,17 @@ p {
   margin-top: 0;
 }
 
-.btn-outline-primary {
-  background-color: $body-bg;
-}
-
 .follow-button button {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
   @extend .shadow;
+}
+.follow-button .btn-outline-primary {
+  background-color: $body-bg;
+}
+.follow-button .btn-outline-primary:hover {
+  color: #fff;
+  background-color: $theme-dark-green;
+  border-color: $theme-dark-green;
 }
