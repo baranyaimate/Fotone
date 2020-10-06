@@ -15,8 +15,11 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\FollowsController;
 
-use App\Mail\NewUserWelcomeMail;
 use Illuminate\Support\Facades\Input;
+
+if (env('APP_ENV') === 'production') {
+    URL::forceScheme('https');
+}
 
 Auth::routes();
 
@@ -47,4 +50,4 @@ Route::get('/user/{user}/followers', [ProfilesController::class, 'showFollowers'
 Route::get('/users', [ProfilesController::class, 'listUsers'])->name('listUsers');
 
 //Search
-Route::get('/search', [ProfilesController::class, 'search']);
+Route::get('/search', [ProfilesController::class, 'search'])->name('search');

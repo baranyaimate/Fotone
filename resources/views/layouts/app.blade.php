@@ -52,12 +52,6 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://fotone.baranyaimate.net" />
-
-    <!-- PWA -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Fotone">
-    <link rel="apple-touch-startup-image" href="{{ asset('logo/apple-touch-icon.png') }}"><!-- nem végleges -->
 </head>
 
 <body>
@@ -91,13 +85,18 @@
                     @auth
                     <div class="navbar-nav ml-auto">
                         <div class="nav-item mt-2 mt-md-0">
-                            <a class="nav-link rounded px-2" href="{{ route('profile.show', ['user' => Auth::user()->id]) }}">
+                            <a class="nav-link rounded px-2" href="{{ route('profile.show', Auth::user()->id) }}">
                                 Profile
                             </a>
                         </div>
                         <div class="nav-item">
                             <a class="nav-link rounded px-2" href="{{ route('upload') }}">
                                 New Post
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link rounded px-2" href="{{ route('profile.edit', Auth::user()->id) }}">
+                                Settings
                             </a>
                         </div>
                         <div class="nav-item">

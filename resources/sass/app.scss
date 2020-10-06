@@ -22,6 +22,9 @@
 // PWA
 @import "PWA";
 
+// Image Placeholder
+@import "imagePlaceholder";
+
 html {
   scroll-behavior: smooth;
 }
@@ -220,4 +223,26 @@ p {
 }
 .mw-900 {
   max-width: 900px;
+}
+
+.index-post-card {
+  margin: 1.5rem auto;
+}
+.index-post-card:first-child {
+  margin-top: 0;
+}
+
+.follow-button button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  @extend .shadow;
+}
+.follow-button .btn-outline-primary {
+  background-color: $body-bg;
+}
+.follow-button .btn-outline-primary:hover {
+  color: #fff;
+  background-color: $theme-dark-green;
+  border-color: $theme-dark-green;
 }
