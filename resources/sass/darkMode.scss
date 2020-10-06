@@ -70,12 +70,12 @@
         background-color: $dark-mode-dark-gray !important;
     }
 
-    .custom-checkbox .custom-control-input ~ .custom-control-label::before,
+    .custom-checkbox .custom-control-input~.custom-control-label::before,
     .custom-file .custom-file-label {
         background-color: $dark-mode-dark-gray !important;
     }
 
-    .custom-file .custom-file-input ~ .custom-file-label::after {
+    .custom-file .custom-file-input~.custom-file-label::after {
         background-color: $dark-mode-dark-gray !important;
         color: $dark-mode-white !important;
     }
@@ -104,11 +104,19 @@
     .pagination li span {
         background-color: $dark-mode-dark-gray !important;
         border-color: $dark-mode-gray !important;
-     }
+    }
 
-     .pagination li.active > span,
-     .pagination li:active > span {
+    .pagination li.active>span,
+    .pagination li:active>span {
         background-color: $theme-dark-green !important;
         color: $dark-mode-white !important;
-     }
+    }
+
+    .follow-button .btn-outline-primary {
+        background-color: $dark-mode-black !important;
+    }
+
+    .follow-button .btn-outline-primary:hover {
+        background-color: $theme-dark-green !important;
+    }
 }

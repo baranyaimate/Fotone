@@ -16,7 +16,7 @@
 
             <div class="row justify-content-center">
 
-                <div class="col-lg-2 col-3 text-center card mx-2 py-2"><strong>{{ $postCount }}</strong>
+                <div class="col-lg-2 col-3 text-center card simple-text mx-2 py-2"><strong>{{ $postCount }}</strong>
                     @if($postCount <= 1) 
                         post
                     @else
