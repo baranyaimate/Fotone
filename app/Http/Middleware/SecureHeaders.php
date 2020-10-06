@@ -21,7 +21,6 @@ class SecureHeaders
     {
         $this->removeUnwantedHeaders($this->unwantedHeaderList);
         $response = $next($request);
-        $response->headers->set('X-XSS-Protection', '1; mode=block');
         return $response;
     }
  
