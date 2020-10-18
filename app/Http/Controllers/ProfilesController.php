@@ -6,7 +6,6 @@ use App\User;
 use App\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
-use Intervention\Image\Facades\Image;
 use JD\Cloudder\Facades\Cloudder;
 
 class ProfilesController extends Controller
