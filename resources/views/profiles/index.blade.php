@@ -39,7 +39,7 @@
             </div>
 
             <p class="text-center mx-auto my-3 mw-650 ">{{ $user->profile->description }}</p>
-            <a class="text-center d-block font-weight-bold" href="{{ $user->profile->url }}">{{ $user->profile->url }}</a>
+            <a class="text-center d-block font-weight-bold mb-3" href="{{ $user->profile->url }}">{{ $user->profile->url }}</a>
 
         </div>
 
