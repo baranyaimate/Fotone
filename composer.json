@@ -21,6 +21,7 @@
         "spatie/laravel-cookie-consent": "2.12.13"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.5",
         "facade/ignition": "2.7.0",
         "mockery/mockery": "1.4.3",
         "nunomaduro/collision": "5.3.0",

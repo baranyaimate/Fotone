@@ -14,6 +14,7 @@
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\FollowsController;
+use App\Http\Controllers\ChatController;
 
 use Illuminate\Support\Facades\Input;
 
@@ -51,3 +52,6 @@ Route::get('/users', [ProfilesController::class, 'listUsers'])->name('listUsers'
 
 //Search
 Route::get('/search', [ProfilesController::class, 'search'])->name('search');
+
+//Chat
+Route::get('/chat', [ChatController::class, 'index'])->name('chat');

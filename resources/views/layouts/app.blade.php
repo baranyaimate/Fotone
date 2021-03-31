@@ -62,12 +62,10 @@
         <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <img src="{{ asset('svg/logo.svg') }}" alt="{{ config('app.name') }}" width="30" height="30"  class="d-inline-block align-top">
+                    <img src="{{ asset('svg/logo.svg') }}" alt="{{ config('app.name') }}" width="30" height="30" class="d-inline-block align-top">
                     {{ config('app.name') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -92,6 +90,11 @@
                         <div class="nav-item">
                             <a class="nav-link rounded px-2" href="{{ route('upload') }}">
                                 New Post
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link rounded px-2" href="{{ route('chat') }}">
+                                Chat
                             </a>
                         </div>
                         <div class="nav-item">
