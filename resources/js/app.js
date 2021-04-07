@@ -33,6 +33,7 @@ const app = new Vue({
 });
 
 //Auto size textarea
+const autosize = require('autosize/dist/autosize');
 autosize(document.querySelectorAll('textarea'));
 
 //Image upload preview
