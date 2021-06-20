@@ -10,22 +10,22 @@
     "require": {
         "php": "7.4.16",
         "ext-gd": "*",
-        "doctrine/dbal": "3.0.0",
+        "doctrine/dbal": "3.1.0",
         "fideloper/proxy": "4.4.1",
-        "illuminate/support": "8.35.0",
+        "illuminate/support": "8.47.0",
         "jrm2k6/cloudder": "0.7.0",
-        "laravel/framework": "8.35.0",
-        "laravel/telescope": "4.4.6",
+        "laravel/framework": "8.47.0",
+        "laravel/telescope": "4.5.0",
         "laravel/tinker": "2.6.1",
-        "laravel/ui": "3.2.0",
+        "laravel/ui": "3.3.0",
         "spatie/laravel-cookie-consent": "2.12.13"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.5",
-        "facade/ignition": "2.7.0",
+        "barryvdh/laravel-debugbar": "^3.6.2",
+        "facade/ignition": "2.10.2",
         "mockery/mockery": "1.4.3",
-        "nunomaduro/collision": "5.3.0",
-        "phpunit/phpunit": "9.5.4"
+        "nunomaduro/collision": "5.4.0",
+        "phpunit/phpunit": "9.5.5"
     },
     "config": {
         "optimize-autoloader": true,
